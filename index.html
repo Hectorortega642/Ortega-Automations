@@ -914,12 +914,13 @@ async function sendAgentMsg(){
       const res = await fetch(WEBHOOK_IA_URL, {
   method: 'POST',
   headers: {'Content-Type':'application/json'},
-  body: JSON.stringify({
-    action: 'chat',
-    message: msg,
-    lang: LANG,
-    timestamp: new Date().toISOString()
-  }),
+ body: JSON.stringify({
+  action: 'chat',
+  message: msg,
+  agent: selectedAgent || 'general',
+  lang: LANG,
+  timestamp: new Date().toISOString()
+}),
   signal: makeTimeoutSignal(12000)
 });
       hideTyping();
