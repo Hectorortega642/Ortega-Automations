@@ -1,0 +1,1185 @@
+<!DOCTYPE html>
+<html lang="en" id="html-root">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
+<title>Ortega Automations — AI · Automation · Dev</title>
+<meta name="description" content="Hector Benitez Ortega — AI Automation Engineer. Autonomous AI pipelines, Make.com automation, Docker deployments and bilingual web apps. Las Vegas, NV."/>
+<meta property="og:title" content="Ortega Automations — AI · Automation · Dev"/>
+<meta property="og:description" content="Autonomous AI pipelines, Make.com automation, Docker systems and bilingual web apps. Hector Benitez Ortega — Las Vegas, NV."/>
+<meta property="og:image" content="https://Hectorortega642.github.io/og-image.png"/>
+<meta property="og:url" content="https://Hectorortega642.github.io"/>
+<meta property="og:type" content="website"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="theme-color" content="#00C896"/>
+<link rel="manifest" href="./manifest.json"/>
+<link rel="apple-touch-icon" href="./icon-192.png"/>
+<link rel="icon" href="./favicon.ico"/>
+<link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png"/>
+<link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png"/>
+<link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png"/>
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*{box-sizing:border-box;margin:0;padding:0;-webkit-tap-highlight-color:transparent;}
+:root{
+  --g:#00C896;--c:#06B6D4;--a:#F59E0B;--p:#8B5CF6;--r:#EF4444;--ok:#22c55e;
+  --bg0:#050807;--bg1:#090D0C;--bg2:#0E1512;--bg3:#141D19;--bg4:#1A2420;
+  --t1:#F0EDE8;--t2:#8A8784;--t3:#404845;--bdr:#1B2622;
+}
+html,body{height:100%;width:100%;overflow:hidden;background:var(--bg0);color:var(--t1);font-family:'Inter',sans-serif;-webkit-font-smoothing:antialiased;touch-action:manipulation;}
+::-webkit-scrollbar{width:3px;height:3px;}
+::-webkit-scrollbar-track{background:transparent;}
+::-webkit-scrollbar-thumb{background:var(--g);border-radius:2px;}
+.mono{font-family:'JetBrains Mono',monospace;}
+#bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;}
+#os{position:relative;z-index:1;height:100dvh;display:flex;flex-direction:column;overflow:hidden;}
+#topbar{flex-shrink:0;height:50px;background:rgba(9,13,12,.97);border-bottom:1px solid var(--bdr);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;align-items:center;padding:0 12px;gap:7px;position:relative;z-index:200;}
+.tb-brand{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--g);text-shadow:0 0 14px rgba(0,200,150,.5);white-space:nowrap;flex-shrink:0;cursor:pointer;}
+.tb-spacer{flex:1;}
+.tb-item{display:flex;align-items:center;gap:5px;padding:4px 9px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;border:1px solid var(--bdr);background:var(--bg3);color:var(--t2);transition:all .18s;white-space:nowrap;text-decoration:none;flex-shrink:0;}
+.tb-item:hover{color:var(--t1);border-color:rgba(0,200,150,.35);}
+#clock{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t2);white-space:nowrap;flex-shrink:0;}
+.pdot{width:6px;height:6px;border-radius:50%;background:var(--g);flex-shrink:0;animation:pdot 2s ease infinite;}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.4;transform:scale(.7);}}
+#vol-btn{cursor:pointer;font-size:14px;flex-shrink:0;padding:3px;border-radius:6px;transition:all .2s;border:1px solid transparent;}
+#vol-btn:hover{border-color:var(--bdr);}
+#lang-toggle{display:flex;border:1px solid var(--bdr);border-radius:8px;overflow:hidden;flex-shrink:0;}
+.lbtn{padding:4px 10px;font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;border:none;outline:none;background:transparent;color:var(--t2);transition:all .18s;}
+.lbtn.active{background:rgba(0,200,150,.14);color:var(--g);}
+#desktop{flex:1;overflow:hidden;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:12px;gap:14px;}
+#hero{text-align:center;}
+#hero h1{font-family:'JetBrains Mono',monospace;font-size:clamp(14px,4vw,26px);font-weight:700;letter-spacing:.4px;line-height:1.25;}
+.glow-g{color:var(--g);text-shadow:0 0 24px rgba(0,200,150,.55);}
+#hero .sub{color:var(--t2);font-size:11px;margin-top:5px;line-height:1.5;}
+#app-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;width:100%;max-width:820px;}
+@media(max-width:540px){#app-grid{grid-template-columns:repeat(2,1fr);}}
+.app-card{background:var(--bg2);border:1px solid var(--bdr);border-radius:13px;padding:15px 9px 13px;cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:5px;text-align:center;user-select:none;position:relative;overflow:hidden;transition:transform .15s,border-color .2s,box-shadow .2s;min-height:90px;}
+.app-card::after{content:'';position:absolute;inset:0;border-radius:13px;opacity:0;transition:opacity .25s;}
+.app-card:active{transform:scale(.92);}
+.app-icon{font-size:24px;line-height:1;position:relative;z-index:1;transition:transform .2s,filter .2s;}
+@keyframes glitch{0%{filter:none;}20%{filter:hue-rotate(90deg) saturate(2);transform:scale(1.1) translate(1px,-1px);}40%{filter:none;transform:scale(1.1) translate(-1px,1px);}60%{filter:hue-rotate(-90deg);transform:scale(1.1);}100%{filter:none;transform:scale(1.1);}}
+.app-card:hover .app-icon{animation:glitch .4s ease;}
+.app-label{font-size:11px;font-weight:600;color:var(--t1);position:relative;z-index:1;}
+.app-sub{font-size:9px;color:var(--t2);font-family:'JetBrains Mono',monospace;position:relative;z-index:1;}
+.ac-g::after{background:radial-gradient(circle at 50% -10%,rgba(0,200,150,.16),transparent 65%);}
+.ac-g:hover,.ac-g:active{border-color:rgba(0,200,150,.5);box-shadow:0 0 24px rgba(0,200,150,.12);}
+.ac-g:hover::after,.ac-g:active::after{opacity:1;}
+.ac-c::after{background:radial-gradient(circle at 50% -10%,rgba(6,182,212,.16),transparent 65%);}
+.ac-c:hover,.ac-c:active{border-color:rgba(6,182,212,.5);box-shadow:0 0 24px rgba(6,182,212,.12);}
+.ac-c:hover::after,.ac-c:active::after{opacity:1;}
+.ac-a::after{background:radial-gradient(circle at 50% -10%,rgba(245,158,11,.16),transparent 65%);}
+.ac-a:hover,.ac-a:active{border-color:rgba(245,158,11,.5);box-shadow:0 0 24px rgba(245,158,11,.12);}
+.ac-a:hover::after,.ac-a:active::after{opacity:1;}
+.ac-p::after{background:radial-gradient(circle at 50% -10%,rgba(139,92,246,.16),transparent 65%);}
+.ac-p:hover,.ac-p:active{border-color:rgba(139,92,246,.5);box-shadow:0 0 24px rgba(139,92,246,.12);}
+.ac-p:hover::after,.ac-p:active::after{opacity:1;}
+.ac-r::after{background:radial-gradient(circle at 50% -10%,rgba(239,68,68,.16),transparent 65%);}
+.ac-r:hover,.ac-r:active{border-color:rgba(239,68,68,.5);box-shadow:0 0 24px rgba(239,68,68,.12);}
+.ac-r:hover::after,.ac-r:active::after{opacity:1;}
+.ac-ok::after{background:radial-gradient(circle at 50% -10%,rgba(34,197,94,.16),transparent 65%);}
+.ac-ok:hover,.ac-ok:active{border-color:rgba(34,197,94,.5);box-shadow:0 0 24px rgba(34,197,94,.12);}
+.ac-ok:hover::after,.ac-ok:active::after{opacity:1;}
+.ac-y::after{background:radial-gradient(circle at 50% -10%,rgba(234,179,8,.16),transparent 65%);}
+.ac-y:hover,.ac-y:active{border-color:rgba(234,179,8,.5);box-shadow:0 0 24px rgba(234,179,8,.12);}
+.ac-y:hover::after,.ac-y:active::after{opacity:1;}
+.ac-pk::after{background:radial-gradient(circle at 50% -10%,rgba(236,72,153,.16),transparent 65%);}
+.ac-pk:hover,.ac-pk:active{border-color:rgba(236,72,153,.5);box-shadow:0 0 24px rgba(236,72,153,.12);}
+.ac-pk:hover::after,.ac-pk:active::after{opacity:1;}
+#dock{flex-shrink:0;height:52px;background:rgba(9,13,12,.94);border-top:1px solid var(--bdr);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;gap:5px;padding:0 10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
+#dock::-webkit-scrollbar{display:none;}
+.dbtn{display:flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;white-space:nowrap;flex-shrink:0;border:1px solid var(--bdr);background:var(--bg3);color:var(--t2);transition:all .15s;text-decoration:none;}
+.dbtn:hover,.dbtn:active{color:var(--t1);border-color:rgba(0,200,150,.35);}
+.dbtn.active{color:var(--g);border-color:rgba(0,200,150,.45);background:rgba(0,200,150,.09);}
+#modal-overlay{position:fixed;inset:0;z-index:150;background:rgba(2,4,3,.9);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);display:none;align-items:flex-end;justify-content:center;padding:0;}
+#modal-overlay.open{display:flex;}
+@media(min-width:620px){#modal-overlay{align-items:center;padding:18px;}}
+.modal-win{background:var(--bg1);border:1px solid var(--bdr);width:100%;max-width:820px;max-height:92dvh;border-radius:20px 20px 0 0;display:flex;flex-direction:column;overflow:hidden;transform:translateY(110%);opacity:0;transition:transform .35s cubic-bezier(.32,1,.56,1),opacity .28s ease;will-change:transform;}
+@media(min-width:620px){.modal-win{border-radius:16px;max-height:90vh;transform:scale(.88) translateY(28px);}}
+.modal-win.open{transform:translateY(0);opacity:1;}
+@media(min-width:620px){.modal-win.open{transform:scale(1) translateY(0);}}
+.modal-win.closing{transform:translateY(110%);opacity:0;transition:transform .28s ease,opacity .22s ease;}
+@media(min-width:620px){.modal-win.closing{transform:scale(.9) translateY(20px);}}
+.modal-bar{flex-shrink:0;height:50px;background:var(--bg2);border-bottom:1px solid var(--bdr);display:flex;align-items:center;padding:0 14px;gap:10px;position:relative;}
+.modal-handle{position:absolute;top:7px;left:50%;transform:translateX(-50%);width:34px;height:4px;border-radius:2px;background:var(--bdr);}
+@media(min-width:620px){.modal-handle{display:none;}}
+.modal-back{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:9px;flex-shrink:0;background:rgba(239,68,68,.1);border:1px solid rgba(239,68,68,.28);color:var(--r);font-size:17px;font-weight:700;cursor:pointer;transition:all .18s;user-select:none;}
+.modal-back:active{background:rgba(239,68,68,.25);transform:scale(.92);}
+.mac-dots{display:none;gap:6px;align-items:center;}
+@media(min-width:620px){.mac-dots{display:flex;}.modal-back{display:none;}}
+.mac-dot{width:12px;height:12px;border-radius:50%;cursor:pointer;transition:opacity .15s;flex-shrink:0;}
+.mac-dot:hover{opacity:.7;}
+.modal-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t2);flex:1;text-align:center;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.modal-spacer{width:34px;flex-shrink:0;}
+@media(min-width:620px){.modal-spacer{display:none;}}
+.modal-body{flex:1;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;padding:18px 16px;}
+@media(min-width:480px){.modal-body{padding:22px 24px;}}
+.slabel{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);text-transform:uppercase;letter-spacing:1px;margin-bottom:8px;}
+.muted{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--t2);}
+.sep{height:1px;background:var(--bdr);margin:14px 0;}
+.badge{display:inline-flex;align-items:center;gap:4px;padding:3px 9px;border-radius:20px;font-size:10px;font-family:'JetBrains Mono',monospace;border:1px solid;white-space:nowrap;}
+.bg{color:var(--g);border-color:rgba(0,200,150,.3);background:rgba(0,200,150,.06);}
+.bc{color:var(--c);border-color:rgba(6,182,212,.3);background:rgba(6,182,212,.06);}
+.ba{color:var(--a);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.06);}
+.bp{color:var(--p);border-color:rgba(139,92,246,.3);background:rgba(139,92,246,.06);}
+.bk{color:var(--t2);border-color:var(--bdr);background:var(--bg3);}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 16px;border-radius:9px;font-family:'JetBrains Mono',monospace;font-size:12px;font-weight:500;cursor:pointer;border:1px solid;outline:none;transition:all .18s;touch-action:manipulation;white-space:nowrap;}
+.btn:active{transform:scale(.95);}
+.btn-g{color:var(--g);border-color:rgba(0,200,150,.32);background:rgba(0,200,150,.08);}
+.btn-g:hover,.btn-g:active{background:rgba(0,200,150,.18);box-shadow:0 0 18px rgba(0,200,150,.22);}
+.btn-c{color:var(--c);border-color:rgba(6,182,212,.32);background:rgba(6,182,212,.08);}
+.btn-c:hover,.btn-c:active{background:rgba(6,182,212,.18);box-shadow:0 0 18px rgba(6,182,212,.22);}
+.btn-a{color:var(--a);border-color:rgba(245,158,11,.32);background:rgba(245,158,11,.08);}
+.btn-a:hover,.btn-a:active{background:rgba(245,158,11,.18);box-shadow:0 0 18px rgba(245,158,11,.22);}
+.btn-p{color:var(--p);border-color:rgba(139,92,246,.32);background:rgba(139,92,246,.08);}
+.btn-p:hover,.btn-p:active{background:rgba(139,92,246,.18);box-shadow:0 0 18px rgba(139,92,246,.22);}
+.btn-k{color:var(--t2);border-color:var(--bdr);background:var(--bg3);}
+.btn-k:hover,.btn-k:active{color:var(--t1);border-color:rgba(0,200,150,.3);}
+.btn-ok{color:var(--ok);border-color:rgba(34,197,94,.32);background:rgba(34,197,94,.08);}
+.btn-ok:hover,.btn-ok:active{background:rgba(34,197,94,.18);}
+.btn-sm{padding:7px 12px;font-size:11px;}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;}
+@media(max-width:480px){.grid2{grid-template-columns:1fr;}.grid3{grid-template-columns:1fr;}}
+.icard{background:var(--bg3);border:1px solid var(--bdr);border-radius:10px;padding:13px;transition:border-color .2s;}
+.icard:hover{border-color:rgba(0,200,150,.2);}
+.collapsible-btn{display:flex;align-items:center;justify-content:space-between;width:100%;padding:10px 0;cursor:pointer;background:none;border:none;color:var(--t2);font-family:'JetBrains Mono',monospace;font-size:11px;border-bottom:1px solid var(--bdr);transition:color .2s;}
+.collapsible-btn:hover{color:var(--t1);}
+.collapsible-btn .caret{transition:transform .25s ease;font-size:14px;color:var(--g);}
+.collapsible-btn.open .caret{transform:rotate(45deg);}
+.collapsible-content{max-height:0;overflow:hidden;transition:max-height .35s cubic-bezier(.4,0,.2,1),opacity .3s ease;opacity:0;}
+.collapsible-content.open{max-height:2000px;opacity:1;}
+.skill-track{height:5px;border-radius:3px;background:var(--bg2);overflow:hidden;margin-top:4px;}
+.skill-fill{height:100%;border-radius:3px;width:0;transition:width 1.1s cubic-bezier(.4,0,.2,1);}
+.fnode{background:var(--bg3);border:1px solid var(--bdr);border-radius:9px;padding:10px 8px;text-align:center;flex-shrink:0;min-width:68px;transition:border-color .4s,box-shadow .4s;}
+.fnode.lit-g{border-color:var(--g);box-shadow:0 0 14px rgba(0,200,150,.3);}
+.fnode.lit-a{border-color:var(--a);box-shadow:0 0 14px rgba(245,158,11,.3);}
+.fnode.lit-done{border-color:var(--ok);box-shadow:0 0 12px rgba(34,197,94,.25);}
+.fpipe{height:2px;flex:1;min-width:10px;background:var(--bdr);border-radius:1px;transition:background .45s,box-shadow .45s;}
+.fpipe.lit{background:var(--g);box-shadow:0 0 6px rgba(0,200,150,.4);}
+.mcard{background:var(--bg3);border:1px solid var(--bdr);border-radius:10px;padding:12px 14px;}
+.mnum{font-family:'JetBrains Mono',monospace;font-size:20px;font-weight:700;transition:color .3s;}
+.btrack{height:7px;border-radius:4px;background:var(--bg2);overflow:hidden;margin-top:7px;}
+.binner{height:100%;border-radius:4px;transition:width .6s ease;}
+.status-led{display:inline-flex;align-items:center;gap:5px;font-family:'JetBrains Mono',monospace;font-size:10px;padding:3px 9px;border-radius:20px;border:1px solid;}
+.led-green{color:var(--ok);border-color:rgba(34,197,94,.3);background:rgba(34,197,94,.07);}
+.led-yellow{color:var(--a);border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.07);}
+.led-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.log-area{background:var(--bg0);border:1px solid var(--bdr);border-radius:10px;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;line-height:1.7;overflow-y:auto;-webkit-overflow-scrolling:touch;max-height:180px;}
+@keyframes bIn{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.bubble{padding:10px 13px;border-radius:12px;font-size:13px;line-height:1.6;max-width:90%;animation:bIn .3s ease forwards;}
+.bu{background:rgba(0,200,150,.1);border:1px solid rgba(0,200,150,.22);color:var(--t1);align-self:flex-end;border-bottom-right-radius:3px;}
+.ba-chat{background:var(--bg3);border:1px solid var(--bdr);color:var(--t2);align-self:flex-start;border-bottom-left-radius:3px;}
+.bs{background:rgba(139,92,246,.07);border:1px solid rgba(139,92,246,.22);color:var(--p);font-family:'JetBrains Mono',monospace;font-size:11px;text-align:center;align-self:center;width:100%;}
+.atag{font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--a);background:rgba(245,158,11,.08);border:1px solid rgba(245,158,11,.22);border-radius:5px;padding:2px 8px;margin-bottom:4px;display:inline-block;}
+@keyframes tdot{0%,80%,100%{transform:scale(0);opacity:.3;}40%{transform:scale(1);opacity:1;}}
+.typing-dots{display:flex;gap:5px;padding:10px 14px;align-self:flex-start;}
+.typing-dots span{width:7px;height:7px;border-radius:50%;background:var(--g);display:inline-block;animation:tdot 1.2s ease infinite;}
+.typing-dots span:nth-child(2){animation-delay:.15s;}.typing-dots span:nth-child(3){animation-delay:.3s;}
+.chat-input-area{display:flex;gap:8px;padding:10px 0 0;border-top:1px solid var(--bdr);margin-top:8px;flex-shrink:0;}
+.chat-input{flex:1;background:var(--bg3);border:1px solid var(--bdr);border-radius:10px;padding:10px 13px;color:var(--t1);font-family:'JetBrains Mono',monospace;font-size:12px;outline:none;transition:border-color .2s;resize:none;line-height:1.4;}
+.chat-input:focus{border-color:rgba(0,200,150,.45);}
+.chat-input::placeholder{color:var(--t3);}
+.star{font-size:26px;cursor:pointer;transition:transform .15s,filter .15s;filter:grayscale(1);}
+.star.active,.star:hover{filter:grayscale(0);transform:scale(1.2);}
+.form-input{width:100%;background:var(--bg3);border:1px solid var(--bdr);border-radius:9px;padding:10px 14px;color:var(--t1);font-family:'Inter',sans-serif;font-size:13px;outline:none;transition:border-color .2s;resize:vertical;}
+.form-input:focus{border-color:rgba(0,200,150,.45);}
+.form-input::placeholder{color:var(--t3);}
+select.form-input option{background:var(--bg3);color:var(--t1);}
+.paypal-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:9px;background:#0070BA;border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;width:100%;}
+.paypal-btn:hover{background:#003087;box-shadow:0 0 18px rgba(0,112,186,.4);}
+.wa-btn{display:flex;align-items:center;justify-content:center;gap:8px;padding:12px 20px;border-radius:9px;background:#25D366;border:none;color:#fff;font-size:14px;font-weight:700;cursor:pointer;transition:all .2s;width:100%;}
+.wa-btn:hover{background:#128C7E;box-shadow:0 0 18px rgba(37,211,102,.4);}
+#li-float{position:fixed;bottom:68px;right:12px;z-index:140;width:40px;height:40px;border-radius:10px;background:#0077B5;border:1px solid rgba(0,119,181,.5);display:flex;align-items:center;justify-content:center;color:#fff;font-size:18px;font-weight:700;cursor:pointer;text-decoration:none;box-shadow:0 0 16px rgba(0,119,181,.3);transition:all .2s;}
+#li-float:hover{transform:scale(1.1);}
+#welcome-overlay{position:fixed;inset:0;z-index:300;background:rgba(2,4,3,.95);backdrop-filter:blur(16px);display:flex;align-items:center;justify-content:center;padding:20px;transition:opacity .4s ease;}
+#welcome-box{background:var(--bg1);border:1px solid rgba(0,200,150,.3);border-radius:18px;max-width:440px;width:100%;padding:30px 26px;text-align:center;box-shadow:0 0 60px rgba(0,200,150,.1);}
+.ds-pill{display:inline-flex;align-items:center;gap:4px;font-family:'JetBrains Mono',monospace;font-size:9px;padding:2px 7px;border-radius:12px;border:1px solid var(--bdr);color:var(--t3);}
+.ds-live{color:var(--g);border-color:rgba(0,200,150,.3);background:rgba(0,200,150,.06);}
+</style>
+</head>
+<body>
+<canvas id="bg-canvas"></canvas>
+<!-- WELCOME -->
+<div id="welcome-overlay">
+  <div id="welcome-box">
+    <div style="font-size:40px;margin-bottom:14px;">🤖</div>
+    <h2 style="font-family:'JetBrains Mono',monospace;font-size:17px;font-weight:700;color:var(--g);margin-bottom:10px;" id="wc-title">Welcome to Ortega Automations</h2>
+    <p style="color:var(--t2);font-size:13px;line-height:1.7;margin-bottom:20px;" id="wc-body">I'm Hector — AI Automation Engineer. I build systems that work for you, not the other way around. Select your language.</p>
+    <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;">
+      <button class="btn btn-k" onclick="setLang('en');closeWelcome()">English 🇺🇸</button>
+      <button class="btn btn-g" onclick="setLang('es');closeWelcome()">Español 🇨🇺</button>
+    </div>
+  </div>
+</div>
+<!-- OS SHELL -->
+<div id="os">
+  <div id="topbar">
+    <span class="tb-brand" onclick="scrollTop()">Ortega.os</span>
+    <div class="tb-spacer"></div>
+    <div class="tb-item"><div class="pdot"></div><span id="tb-status">Open to Work</span></div>
+    <span id="clock">--:--</span>
+    <span id="vol-btn" title="Toggle UI sounds" onclick="toggleSound()">🔇</span>
+    <div id="lang-toggle">
+      <button class="lbtn active" id="btn-en" onclick="setLang('en')">EN</button>
+      <button class="lbtn" id="btn-es" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+  <div id="desktop">
+    <div id="hero">
+      <h1>ORTEGA <span class="glow-g">AUTOMATIONS</span></h1>
+      <p class="sub" id="hero-sub">AI · Automation · Dev — Las Vegas, NV · Tap a module</p>
+    </div>
+    <div id="app-grid">
+      <div class="app-card ac-g"  onclick="pc();openWin('profile')"><div class="app-icon">👤</div><div class="app-label" id="lbl-profile">Profile</div><div class="app-sub">Stack &amp; XP</div></div>
+      <div class="app-card ac-a"  onclick="pc();openWin('make')"><div class="app-icon">⚡</div><div class="app-label" id="lbl-make">Make.com</div><div class="app-sub">Automation</div></div>
+      <div class="app-card ac-c"  onclick="pc();openWin('docker')"><div class="app-icon">🐳</div><div class="app-label" id="lbl-docker">Docker</div><div class="app-sub">Monitor</div></div>
+      <div class="app-card ac-p"  onclick="pc();openWin('agents')"><div class="app-icon">🧠</div><div class="app-label" id="lbl-agents">AI Agents</div><div class="app-sub">Crew Chat</div></div>
+      <div class="app-card ac-ok" onclick="pc();openWin('dev')"><div class="app-icon">🛠️</div><div class="app-label" id="lbl-dev">Dev &amp; Build</div><div class="app-sub">Code &amp; Godot</div></div>
+      <div class="app-card ac-y"  onclick="pc();openWin('writing')"><div class="app-icon">✍️</div><div class="app-label" id="lbl-writing">Writing</div><div class="app-sub">Editorial</div></div>
+      <div class="app-card ac-r"  onclick="pc();openWin('office')"><div class="app-icon">📋</div><div class="app-label" id="lbl-office">Office</div><div class="app-sub">Admin &amp; Data</div></div>
+      <div class="app-card ac-pk" onclick="pc();openWin('quote')"><div class="app-icon">💼</div><div class="app-label" id="lbl-quote">Quote</div><div class="app-sub">Request &amp; Pay</div></div>
+    </div>
+  </div>
+  <div id="dock">
+    <div class="dbtn" id="dk-profile" onclick="openWin('profile')">👤 <span id="dk-ptxt">Profile</span></div>
+    <div class="dbtn" id="dk-make"    onclick="openWin('make')">⚡ Make</div>
+    <div class="dbtn" id="dk-docker"  onclick="openWin('docker')">🐳 Docker</div>
+    <div class="dbtn" id="dk-agents"  onclick="openWin('agents')">🧠 <span id="dk-atxt">Agents</span></div>
+    <div class="dbtn" id="dk-support" onclick="openWin('support')">🔧 <span id="dk-stxt">Support</span></div>
+    <div class="dbtn" id="dk-reviews" onclick="openWin('reviews')">⭐ <span id="dk-rtxt">Reviews</span></div>
+    <div class="dbtn" id="dk-quote"   onclick="openWin('quote')">💼 <span id="dk-qtxt">Quote</span></div>
+    <a class="dbtn" href="https://github.com/Hectorortega642" target="_blank" rel="noopener">⌨ GitHub</a>
+  </div>
+</div>
+<a id="li-float" href="https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296" target="_blank" rel="noopener" title="LinkedIn">in</a>
+<!-- MODAL -->
+<div id="modal-overlay">
+  <div class="modal-win" id="modal-win">
+    <div class="modal-bar">
+      <div class="modal-handle"></div>
+      <div class="modal-back" onclick="pc();closeWin()">&#8592;</div>
+      <div class="mac-dots">
+        <div class="mac-dot" style="background:#FF5F57;" onclick="pc();closeWin()" title="Close"></div>
+        <div class="mac-dot" style="background:#FEBC2E;"></div>
+        <div class="mac-dot" style="background:#28C840;"></div>
+      </div>
+      <span class="modal-title" id="modal-title">—</span>
+      <div class="modal-spacer"></div>
+    </div>
+    <div class="modal-body" id="modal-body"></div>
+  </div>
+</div>
+<script>
+/* CONFIG */
+const WEBHOOK_IA_URL="";
+const WEBHOOK_DATABASE_URL="";
+const PAYPAL_ME_URL="https://paypal.me/hectorortegaxXx";
+const WHATSAPP_NUMBER="17252068340";
+const DATA_JSON_URL="./data.json";
+
+/* STATE */
+let LANG='en',currentWin=null,dockerTimer=null;
+let makeRunning=false,hcRunning=false,agentRunning=false,supportRunning=false;
+let totalXP=0,soundEnabled=false,profileData=null,selectedStars=0;
+let reviews=[];
+const t=k=>TR[LANG][k];
+const hasText=v=>typeof v==='string'&&v.trim()!=='';
+const esc=v=>String(v??'').replace(/[&<>'"]/g,ch=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[ch]));
+function makeTimeoutSignal(ms=4000){
+  if(typeof AbortSignal!=='undefined'&&typeof AbortSignal.timeout==='function')return AbortSignal.timeout(ms);
+  if(typeof AbortController==='undefined')return undefined;
+  const ctrl=new AbortController();
+  setTimeout(()=>ctrl.abort(),ms);
+  return ctrl.signal;
+}
+
+/* TRANSLATIONS */
+const TR={
+en:{
+  status:'Open to Work',heroSub:'AI · Automation · Dev — Las Vegas, NV · Tap a module',
+  lProfile:'Profile',lMake:'Make.com',lDocker:'Docker',lAgents:'AI Agents',
+  lDev:'Dev & Build',lWriting:'Writing',lOffice:'Office',lQuote:'Quote',
+  dkP:'Profile',dkA:'Agents',dkS:'Support',dkR:'Reviews',dkQ:'Quote',
+  wcTitle:'Welcome to Ortega Automations',
+  wcBody:"I'm Hector — AI Automation Engineer based in Las Vegas. I build systems that work for you, not the other way around. Select your language.",
+  tProfile:'👤 Professional Profile',tMake:'⚡ Make.com — Webhook Simulator',
+  tDocker:'🐳 Docker — Live Monitor',tAgents:'🧠 AI Agents — Live Chat',
+  tDev:'🛠️ Dev & Automation',tWriting:'✍️ Writing & Content',
+  tOffice:'📋 Office & Admin',tQuote:'💼 Request a Quote',
+  tSupport:'🔧 IT Support Assistant',tReviews:'⭐ Reviews & Feedback',
+  dsLive:'data.json — live',dsFallback:'built-in defaults',
+  bio:"Polytechnic professional with continuous experience since 2017 across Cuba and Las Vegas. I transitioned from operations tech into building autonomous AI pipelines, automation engines, and bilingual web systems — because the best technology disappears into the background and just makes life easier.",
+  expTitle:'Experience',skillsTitle:'Technical Skills',certsTitle:'Certifications',
+  exp:[
+    {t:'AI Automation Engineer',s:'2025 – Present · Self-directed'},
+    {t:'Promotor · Cuballama',s:'Dec 2025 – Present · Remote, USA'},
+    {t:'Porter · TI Communities',s:'Nov 2025 – Present · Las Vegas'},
+    {t:'Utility · Palms Casino Resort',s:'May 2024 – Dec 2025 · Las Vegas'},
+    {t:'Systems Tech · INIFAT Cuba',s:'2018 – 2024 · 6 years'},
+  ],
+  skills:[
+    {n:'Python',p:90,c:'var(--g)'},{n:'Prompt Engineering',p:90,c:'var(--g)'},
+    {n:'FastAPI',p:85,c:'var(--g)'},{n:'CrewAI / Multi-Agent',p:84,c:'var(--g)'},
+    {n:'Make.com',p:82,c:'var(--a)'},{n:'Docker',p:80,c:'var(--a)'},
+    {n:'HTML/CSS/JS',p:78,c:'var(--p)'},{n:'SQLite',p:76,c:'var(--p)'},
+    {n:'English / Español',p:96,c:'var(--g)'},
+  ],
+  certs:['🎓 Prompt Engineering for ChatGPT — SkillsBooster (Jun 2026)','🔧 Make Nivel 2 Fundamentos — Make.com (Jun 2026)','💻 Computer Programming — Codecademy (Oct 2024–present)','🏛 Ingeniería Informática — UNAH Havana (2018–2019)','📋 +8 more certifications on LinkedIn ↗'],
+  makeDesc:"A real Make.com pipeline I built for NextKeySolutions LLC. A client submits a form — and in under 600 ms their lead is logged, the owner is notified by email and WhatsApp. Zero human steps required.",
+  makeNodes:[{id:'mn-f',icon:'📋',l:'Form',s:'Client sends'},{id:'mn-h',icon:'🔗',l:'Webhook',s:'Make receives'},{id:'mn-p',icon:'🔀',l:'Parser',s:'Extract fields'},{id:'mn-r',icon:'⚙️',l:'Router',s:'3 paths'}],
+  makeOuts:[{id:'mn-s',icon:'📊',l:'Sheets',s:'Log'},{id:'mn-e',icon:'📧',l:'Email',s:'Alert'},{id:'mn-w',icon:'💬',l:'WhatsApp',s:'Instant'}],
+  makeLogWait:'// Waiting for trigger...',makeLogReset:'// Reset — ready.',
+  makeBtnTrigger:'⚡ Simulate Webhook Trigger',makeBtnReset:'↺ Reset',makeBtnAgain:'⚡ Trigger Again',
+  makeLog:[
+    {t:'[00:00.000] Client submitted contact form — POST payload captured',c:'var(--t2)'},
+    {t:'[00:00.082] Webhook received by Make.com · HTTP 200 OK',c:'var(--a)'},
+    {t:'[00:00.144] Payload parsed: {name, email, service, zip, lang="es"}',c:'var(--t2)'},
+    {t:'[00:00.196] Router activated — 3 parallel branches dispatched',c:'var(--a)'},
+    {t:'[00:00.312] ✓ Google Sheets — Row #488 added to "Leads 2026"',c:'var(--g)'},
+    {t:'[00:00.398] ✓ Email sent → owner@nextkeysolutions.com',c:'var(--g)'},
+    {t:'[00:00.514] ✓ WhatsApp delivered — Scenario complete · 514ms',c:'var(--g)'},
+  ],
+  dockerDesc:"Ortega Automations runs fully containerized. Metrics update every 1.5 s. Press Health Check to query the system. If a webhook is configured, a real network call is made.",
+  containersTitle:'Containers',
+  containers:['ortega-automations_api_1 · :8000','ortega-automations_db_1 · SQLite WAL','voice-bridge · Windows host'],
+  dCPU:'CPU',dMem:'Memory',dNet:'Network I/O',
+  healthWait:'// Press Run Health Check to query system status...',
+  healthBtn:'🩺 Run Health Check',healthBtnAgain:'🩺 Run Again',healthBtnRunning:'Checking...',
+  healthLines:[
+    {t:'$ curl http://localhost:8000/health',c:'var(--t2)'},{t:'',c:''},
+    {t:'> Connecting to FastAPI orchestrator...',c:'var(--t2)'},{t:'> Response received in 12ms',c:'var(--a)'},{t:'',c:''},
+    {t:'{ "status": "ok",',c:'var(--g)'},{t:'  "version": "1.0.0",',c:'var(--g)'},
+    {t:'  "db": "connected (SQLite WAL)",',c:'var(--g)'},{t:'  "queue_size": 0,',c:'var(--g)'},
+    {t:'  "workers_active": 2,',c:'var(--g)'},{t:'  "agents_online": 5,',c:'var(--g)'},
+    {t:'  "uptime": "6h 42m 11s" }',c:'var(--g)'},{t:'',c:''},{t:'✓ All systems nominal.',c:'var(--ok)'},
+  ],
+  agentsDesc:"Send any question to the AI crew. If a webhook is connected, real agents respond. In simulation mode, the crew resolves your request automatically.",
+  rosterTitle:'Active Agent Crew',
+  roster:[{icon:'🎯',n:'Planner',c:'var(--g)'},{icon:'🔍',n:'Researcher',c:'var(--g)'},{icon:'📊',n:'Analyst',c:'var(--a)'},{icon:'✍️',n:'Writer',c:'var(--a)'},{icon:'💻',n:'Coder',c:'var(--p)'},{icon:'🏆',n:'Scorer',c:'var(--p)'}],
+  quickTitle:'Quick Missions',
+  quickMissions:[{k:'report',l:'📄 Report'},{k:'code',l:'💻 Code'},{k:'research',l:'🔍 Research'}],
+  clearBtn:'✕ Clear',inputPH:'Ask the agent crew anything...',sendBtn:'Send →',
+  simMsg:'[Simulation Mode] Connect WEBHOOK_IA_URL to activate real agents.\n[Planner] Request received and routed to the crew.\n[Researcher] Scanning relevant sources and indexing key data.\n[Analyst] Processing and building response framework.\n[Writer] Your answer is ready. All systems nominal.',
+  teamXP:'Team XP',
+  missions:{
+    report:{label:'📄 Generate AI Report',steps:[
+      {ag:'Orchestrator',r:'s',msg:'Mission: Generate AI Report · Decomposing into 3 sub-tasks...'},
+      {ag:'Planner',r:'a',msg:'Route: Researcher → data · Analyst → insights · Writer → report.'},
+      {ag:'Researcher',r:'a',msg:'Scanning 34 docs... Top 3 AI automation trends for 2026 identified.'},
+      {ag:'Analyst',r:'a',msg:'5 key insights extracted. Confidence: 91%. Forwarding to Writer.'},
+      {ag:'Writer',r:'a',msg:'Report compiled — Intro · Findings · Recommendations · Conclusion.'},
+      {ag:'Scorer',r:'s',msg:'✓ Mission complete! +480 XP earned.'},
+    ]},
+    code:{label:'💻 Generate Python Script',steps:[
+      {ag:'Orchestrator',r:'s',msg:'Mission: Code Generation · Routing to Planner + Coder.'},
+      {ag:'Planner',r:'a',msg:'Task: async FastAPI endpoint. Coder writes, Writer documents.'},
+      {ag:'Coder',r:'a',msg:'94 lines generated. FastAPI + async. Self-review: no issues.'},
+      {ag:'Writer',r:'a',msg:'Docstrings and README added. Quality: 96/100.'},
+      {ag:'Scorer',r:'s',msg:'✓ Done! +330 XP · 🏆 "Clean Code" badge unlocked!'},
+    ]},
+    research:{label:'🔍 Market Research',steps:[
+      {ag:'Orchestrator',r:'s',msg:'Mission: Market Research · Full team engaged.'},
+      {ag:'Researcher',r:'a',msg:'52 sources indexed. Automation market $4.2B. Hispanic segment underserved.'},
+      {ag:'Analyst',r:'a',msg:'SWOT complete. Biggest gap: bilingual automation tools in US market.'},
+      {ag:'Writer',r:'a',msg:'2-page executive brief with 5 recommendations ready.'},
+      {ag:'Scorer',r:'s',msg:'✓ Done! +600 XP · 🎯 "Team Synergy" achievement unlocked!'},
+    ]},
+  },
+  devDesc:'From Python automation scripts to Godot game prototypes — the full technical picture.',
+  devSections:[
+    {title:'⚡ Make.com Automation',body:'Built multi-step scenarios for lead capture, CRM updates and client notifications — zero manual work after setup. Familiar with webhooks, routers, HTTP modules, Google Sheets and email integrations.'},
+    {title:'🐳 Docker & Infrastructure',body:'Containerized the full Ortega Automations stack: FastAPI orchestrator + SQLite WAL database + voice bridge. Single docker compose up -d deploys everything.'},
+    {title:'🐍 Python & FastAPI',body:'Async FastAPI with priority queue task routing, ThreadPoolExecutor for non-blocking CrewAI calls, versioned DB migrations via SchemaManager, pytest test suite and Pydantic models.'},
+    {title:'🎮 Godot Game Dev',body:'Prototyped 2D/3D game mechanics in GDScript — scene management, character controllers, UI systems and shader effects. Currently exploring procedural generation and agent-based NPC behavior.'},
+  ],
+  writingDesc:'Words are systems too. I write, translate and structure content that works as hard as my code.',
+  writingSections:[
+    {title:'📰 Editorial & Articles',body:'Technical articles, blog posts and LinkedIn content in English and Spanish. Clean, persuasive writing that makes complex topics accessible to any audience.'},
+    {title:'📄 Scientific Papers & Reports',body:'Structuring research documents, formatting citations, proofreading and translating academic papers. Familiar with APA, Chicago and IEEE citation styles.'},
+    {title:'🎙️ Transcription & Translation',body:'Audio-to-text transcription (manual and AI-assisted), EN↔ES translation for legal, business and technical documents. Native Spanish, professional English.'},
+    {title:'🧑‍💼 Professional Profile Structuring',body:'Crafting LinkedIn profiles, CVs and portfolio narratives that convert views into connections — because your story deserves to be told well.'},
+  ],
+  officeDesc:'Rapid, reliable digital operations — the engine room behind productive teams.',
+  officeSections:[
+    {title:'📊 Data Management & Sheets',body:'Google Sheets / Excel automation, data cleaning, formula building, pivot tables, dashboard creation and export pipelines to JSON or CSV.'},
+    {title:'🗂️ Templates & Documentation',body:'Building reusable document templates, SOPs, process maps and knowledge bases that save hours every week.'},
+    {title:'🖥️ Administrative Support',body:'Calendar management, email triage, digital filing, task tracking and light CRM work. Bilingual communication, fast turnaround.'},
+  ],
+  quotePlaceholder:'Describe what you need as clearly as possible — include timelines, integrations, or existing tools if relevant.',
+  quoteTypes:['Automation Pipeline (Make.com)','AI Agent System (Python/CrewAI)','Docker Deployment','Web Application','Editorial / Writing','Translation / Transcription','Data Management','IT Support / Consulting','Other'],
+  quoteTitle:'Tell me what you need',
+  quoteName:'Your Name',quoteCompany:'Company (optional)',quoteService:'Service Type',quoteDesc:'Project Description',
+  quotePrivacy:'🔒 Your data is kept private and processed only to prepare your quote. We never sell or share your information.',
+  quoteBtn:'Calculate My Quote →',quoteReset:'↺ Start Over',quotePayPal:'💳 PayPal',quoteWA:'💬 WhatsApp',quoteSaved:'✓ Auto-saved locally',
+  supportDesc:'Describe any tech problem — software, configuration, network, office tools. I will walk you through a diagnosis step by step.',
+  supportPH:'e.g. My printer stopped working after a Windows update...',
+  supportSend:'Send →',supportClear:'✕ Clear',
+  supportSim:[
+    "Running a quick diagnostic on your issue.",
+    "Step 1: Verify the basics — is the device powered on and all cables properly connected?",
+    "Step 2: Restart both the device and the host computer. Many configuration issues clear on a fresh boot.",
+    "Step 3: Check Device Manager (Windows) or System Preferences (Mac) for error flags — yellow triangles usually indicate a driver issue.",
+    "Step 4: Update or reinstall the driver from the manufacturer's official website. For printers, also re-run the setup wizard.",
+    "If none of these steps resolve it, send me the exact error message and I'll escalate the diagnosis. Most IT problems have a simple fix once we isolate the root cause.",
+  ],
+  reviewsTitle:'Client Reviews',reviewsSubtitle:'Real feedback from real clients.',
+  reviewPrompt:'How was your experience?',reviewPH:'Tell others what you built together and how it went...',
+  reviewName:'Your name or initials',reviewSubmit:'Submit Review',
+  reviewThankYou:'✓ Thank you! Your review is live.',
+  reviewSharePrompt:'You gave us 5 stars! Help others find us:',
+  reviewCopyLink:'📋 Copy Link',reviewShareLI:'Share on LinkedIn',reviewCopied:'✓ Copied!',
+  noReviews:'No reviews yet — be the first!',
+},
+es:{
+  status:'Disponible',heroSub:'IA · Automatización · Dev — Las Vegas, NV · Toca un módulo',
+  lProfile:'Perfil',lMake:'Make.com',lDocker:'Docker',lAgents:'Agentes IA',
+  lDev:'Dev & Código',lWriting:'Redacción',lOffice:'Oficina',lQuote:'Cotizar',
+  dkP:'Perfil',dkA:'Agentes',dkS:'Soporte',dkR:'Reseñas',dkQ:'Cotizar',
+  wcTitle:'Bienvenido a Ortega Automations',
+  wcBody:'Soy Héctor — Ingeniero de Automatización IA en Las Vegas. Construyo sistemas que trabajan para ti, no al revés. Selecciona tu idioma.',
+  tProfile:'👤 Perfil Profesional',tMake:'⚡ Make.com — Simulador Webhook',
+  tDocker:'🐳 Docker — Monitor',tAgents:'🧠 Agentes IA — Chat',
+  tDev:'🛠️ Dev & Automatización',tWriting:'✍️ Redacción & Contenido',
+  tOffice:'📋 Oficina & Admin',tQuote:'💼 Solicitar Cotización',
+  tSupport:'🔧 Asistente de Soporte IT',tReviews:'⭐ Reseñas & Opiniones',
+  dsLive:'data.json — en vivo',dsFallback:'datos predeterminados',
+  bio:'Profesional politécnico con experiencia continua desde 2017 en Cuba y Las Vegas. Transicioné de operaciones técnicas a construir pipelines autónomos de IA, motores de automatización y sistemas web bilingües — porque la mejor tecnología desaparece en el fondo y simplemente hace la vida más fácil.',
+  expTitle:'Experiencia',skillsTitle:'Habilidades Técnicas',certsTitle:'Certificaciones',
+  exp:[
+    {t:'Ingeniero de Automatización IA',s:'2025 – Presente · Independiente'},
+    {t:'Promotor · Cuballama',s:'Dic 2025 – Presente · Remoto, EE.UU.'},
+    {t:'Porter · TI Communities',s:'Nov 2025 – Presente · Las Vegas'},
+    {t:'Utility · Palms Casino Resort',s:'May 2024 – Dic 2025 · Las Vegas'},
+    {t:'Técnico de Sistemas · INIFAT Cuba',s:'2018 – 2024 · 6 años'},
+  ],
+  skills:[
+    {n:'Python',p:90,c:'var(--g)'},{n:'Ingeniería de Prompts',p:90,c:'var(--g)'},
+    {n:'FastAPI',p:85,c:'var(--g)'},{n:'CrewAI / Multi-Agente',p:84,c:'var(--g)'},
+    {n:'Make.com',p:82,c:'var(--a)'},{n:'Docker',p:80,c:'var(--a)'},
+    {n:'HTML/CSS/JS',p:78,c:'var(--p)'},{n:'SQLite',p:76,c:'var(--p)'},
+    {n:'Español / English',p:96,c:'var(--g)'},
+  ],
+  certs:['🎓 Prompt Engineering for ChatGPT — SkillsBooster (Jun 2026)','🔧 Make Nivel 2 Fundamentos — Make.com (Jun 2026)','💻 Programación — Codecademy (Oct 2024–presente)','🏛 Ingeniería Informática — UNAH La Habana (2018–2019)','📋 +8 certificaciones más en LinkedIn ↗'],
+  makeDesc:'Pipeline real de Make.com que construí para NextKeySolutions LLC. Un cliente envía un formulario — en menos de 600 ms su lead está registrado, el dueño recibe notificación por email y WhatsApp. Cero pasos manuales.',
+  makeNodes:[{id:'mn-f',icon:'📋',l:'Formulario',s:'Cliente envía'},{id:'mn-h',icon:'🔗',l:'Webhook',s:'Make recibe'},{id:'mn-p',icon:'🔀',l:'Parser',s:'Extrae campos'},{id:'mn-r',icon:'⚙️',l:'Router',s:'3 rutas'}],
+  makeOuts:[{id:'mn-s',icon:'📊',l:'Sheets',s:'Registrar'},{id:'mn-e',icon:'📧',l:'Email',s:'Alertar'},{id:'mn-w',icon:'💬',l:'WhatsApp',s:'Instant.'}],
+  makeLogWait:'// Esperando disparador...',makeLogReset:'// Reiniciado — listo.',
+  makeBtnTrigger:'⚡ Simular Disparador (Webhook)',makeBtnReset:'↺ Reiniciar',makeBtnAgain:'⚡ Disparar Otra Vez',
+  makeLog:[
+    {t:'[00:00.000] Cliente envió formulario — payload capturado',c:'var(--t2)'},
+    {t:'[00:00.082] Webhook recibido por Make.com · HTTP 200 OK',c:'var(--a)'},
+    {t:'[00:00.144] Datos: {nombre, email, servicio, zip, idioma="es"}',c:'var(--t2)'},
+    {t:'[00:00.196] Router activado — 3 ramas paralelas despachadas',c:'var(--a)'},
+    {t:'[00:00.312] ✓ Google Sheets — Fila #488 añadida',c:'var(--g)'},
+    {t:'[00:00.398] ✓ Email enviado → owner@nextkeysolutions.com',c:'var(--g)'},
+    {t:'[00:00.514] ✓ WhatsApp entregado — Escenario completo · 514ms',c:'var(--g)'},
+  ],
+  dockerDesc:'Ortega Automations corre completamente contenedorizado. Las métricas se actualizan cada 1.5 s. Presiona Health Check para consultar el sistema. Si hay webhook configurado, se hace una llamada real de red.',
+  containersTitle:'Contenedores',
+  containers:['ortega-automations_api_1 · :8000','ortega-automations_db_1 · SQLite WAL','voice-bridge · Windows host'],
+  dCPU:'CPU',dMem:'Memoria',dNet:'Red I/O',
+  healthWait:'// Presiona Ejecutar Health Check para consultar el sistema...',
+  healthBtn:'🩺 Ejecutar Health Check',healthBtnAgain:'🩺 Ejecutar Otra Vez',healthBtnRunning:'Verificando...',
+  healthLines:[
+    {t:'$ curl http://localhost:8000/health',c:'var(--t2)'},{t:'',c:''},
+    {t:'> Conectando al orquestador FastAPI...',c:'var(--t2)'},{t:'> Respuesta en 12ms',c:'var(--a)'},{t:'',c:''},
+    {t:'{ "estado": "ok",',c:'var(--g)'},{t:'  "version": "1.0.0",',c:'var(--g)'},
+    {t:'  "base_datos": "conectada (SQLite WAL)",',c:'var(--g)'},{t:'  "cola": 0,',c:'var(--g)'},
+    {t:'  "workers_activos": 2,',c:'var(--g)'},{t:'  "agentes_online": 5,',c:'var(--g)'},
+    {t:'  "uptime": "6h 42m 11s" }',c:'var(--g)'},{t:'',c:''},{t:'✓ Todos los sistemas nominales.',c:'var(--ok)'},
+  ],
+  agentsDesc:'Envía cualquier pregunta al equipo de IA. Si hay webhook conectado, agentes reales responden. En modo simulación el equipo resuelve tu solicitud automáticamente.',
+  rosterTitle:'Equipo de Agentes Activos',
+  roster:[{icon:'🎯',n:'Planificador',c:'var(--g)'},{icon:'🔍',n:'Investigador',c:'var(--g)'},{icon:'📊',n:'Analista',c:'var(--a)'},{icon:'✍️',n:'Escritor',c:'var(--a)'},{icon:'💻',n:'Programador',c:'var(--p)'},{icon:'🏆',n:'Evaluador',c:'var(--p)'}],
+  quickTitle:'Misiones Rápidas',
+  quickMissions:[{k:'report',l:'📄 Reporte'},{k:'code',l:'💻 Código'},{k:'research',l:'🔍 Investigar'}],
+  clearBtn:'✕ Limpiar',inputPH:'Pregunta lo que quieras al equipo...',sendBtn:'Enviar →',
+  simMsg:'[Modo Simulación] Conecta WEBHOOK_IA_URL para activar agentes reales.\n[Planificador] Solicitud recibida y enrutada al equipo.\n[Investigador] Escaneando fuentes relevantes e indexando datos clave.\n[Analista] Procesando y construyendo marco de respuesta.\n[Escritor] Tu respuesta está lista. Todos los sistemas nominales.',
+  teamXP:'XP del Equipo',
+  missions:{
+    report:{label:'📄 Generar Reporte de IA',steps:[
+      {ag:'Orquestador',r:'s',msg:'Misión: Generar Reporte · Descomponiendo en 3 sub-tareas...'},
+      {ag:'Planificador',r:'a',msg:'Plan: Investigador → datos · Analista → insights · Escritor → reporte.'},
+      {ag:'Investigador',r:'a',msg:'34 documentos indexados. Top 3 tendencias IA 2026 identificadas.'},
+      {ag:'Analista',r:'a',msg:'5 insights clave. Confianza: 91%. Enviando al Escritor.'},
+      {ag:'Escritor',r:'a',msg:'Reporte compilado — Intro · Hallazgos · Recomendaciones · Conclusión.'},
+      {ag:'Evaluador',r:'s',msg:'✓ ¡Misión completa! +480 XP obtenidos.'},
+    ]},
+    code:{label:'💻 Generar Script Python',steps:[
+      {ag:'Orquestador',r:'s',msg:'Misión: Generación de Código · Enrutando a Planificador + Programador.'},
+      {ag:'Planificador',r:'a',msg:'Tarea: endpoint async FastAPI. Programador escribe, Escritor documenta.'},
+      {ag:'Programador',r:'a',msg:'94 líneas generadas. FastAPI + async. Sin problemas.'},
+      {ag:'Escritor',r:'a',msg:'Docstrings y README añadidos. Calidad: 96/100.'},
+      {ag:'Evaluador',r:'s',msg:'✓ ¡Listo! +330 XP · 🏆 Insignia "Código Limpio" desbloqueada.'},
+    ]},
+    research:{label:'🔍 Investigación de Mercado',steps:[
+      {ag:'Orquestador',r:'s',msg:'Misión: Investigación · Equipo completo activado.'},
+      {ag:'Investigador',r:'a',msg:'52 fuentes. Mercado $4.2B. Segmento hispano desatendido.'},
+      {ag:'Analista',r:'a',msg:'FODA completo. Brecha: herramientas bilingües en EE.UU.'},
+      {ag:'Escritor',r:'a',msg:'Resumen ejecutivo con 5 recomendaciones listo.'},
+      {ag:'Evaluador',r:'s',msg:'✓ ¡Listo! +600 XP · 🎯 Logro "Sinergia" desbloqueado.'},
+    ]},
+  },
+  devDesc:'De scripts de automatización en Python a prototipos en Godot — el panorama técnico completo.',
+  devSections:[
+    {title:'⚡ Automatización con Make.com',body:'Escenarios de captura de leads, CRM y notificaciones — sin trabajo manual después de la configuración. Webhooks, routers, módulos HTTP, Google Sheets e integraciones de email.'},
+    {title:'🐳 Docker e Infraestructura',body:'Contenedorizé el stack completo de Ortega Automations: orquestador FastAPI + SQLite WAL + voice bridge. Un docker compose up -d despliega todo.'},
+    {title:'🐍 Python & FastAPI',body:'FastAPI async con cola de prioridad, ThreadPoolExecutor para CrewAI no bloqueante, migraciones versionadas, pytest y modelos Pydantic.'},
+    {title:'🎮 Desarrollo en Godot',body:'Mecánicas 2D/3D en GDScript — gestión de escenas, controladores, UI y shaders. Explorando generación procedural y NPCs basados en agentes.'},
+  ],
+  writingDesc:'Las palabras también son sistemas. Escribo, traduzco y estructuro contenido que trabaja tan duro como mi código.',
+  writingSections:[
+    {title:'📰 Redacción Editorial & Artículos',body:'Artículos técnicos, posts de blog y contenido de LinkedIn en inglés y español. Escritura clara que hace accesibles los temas complejos.'},
+    {title:'📄 Papers Científicos & Reportes',body:'Estructuración de documentos de investigación, formato de citas, corrección y traducción de papers. APA, Chicago e IEEE.'},
+    {title:'🎙️ Transcripción & Traducción',body:'Transcripción audio-texto (manual y IA), traducción EN↔ES para documentos legales, empresariales y técnicos. Español nativo, inglés profesional.'},
+    {title:'🧑‍💼 Estructuración de Perfiles',body:'Perfiles de LinkedIn, CVs y narrativas de portafolio que convierten visitas en conexiones.'},
+  ],
+  officeDesc:'Operaciones digitales rápidas y confiables — el motor detrás de equipos productivos.',
+  officeSections:[
+    {title:'📊 Gestión de Datos & Sheets',body:'Automatización de Google Sheets/Excel, limpieza de datos, fórmulas, tablas dinámicas, dashboards y pipelines a JSON/CSV.'},
+    {title:'🗂️ Plantillas & Documentación',body:'Plantillas reutilizables, SOPs, mapas de procesos y bases de conocimiento que ahorran horas cada semana.'},
+    {title:'🖥️ Soporte Administrativo',body:'Gestión de calendarios, triaje de email, archivo digital, seguimiento de tareas y CRM ligero. Bilingüe, entrega rápida.'},
+  ],
+  quotePlaceholder:'Describe lo que necesitas con la mayor claridad posible — plazos, integraciones o herramientas existentes.',
+  quoteTypes:['Pipeline de Automatización (Make.com)','Sistema de Agentes IA (Python/CrewAI)','Despliegue Docker','Aplicación Web','Redacción Editorial','Traducción / Transcripción','Gestión de Datos','Soporte IT / Consultoría','Otro'],
+  quoteTitle:'Cuéntame qué necesitas',
+  quoteName:'Tu nombre',quoteCompany:'Empresa (opcional)',quoteService:'Tipo de Servicio',quoteDesc:'Descripción del Proyecto',
+  quotePrivacy:'🔒 Tus datos son privados y se procesan solo para preparar tu cotización. No los vendemos ni compartimos.',
+  quoteBtn:'Calcular Mi Cotización →',quoteReset:'↺ Empezar de Nuevo',quotePayPal:'💳 PayPal',quoteWA:'💬 WhatsApp',quoteSaved:'✓ Guardado localmente',
+  supportDesc:'Describe cualquier problema técnico. Te guiaré en un diagnóstico paso a paso.',
+  supportPH:'ej. Mi impresora dejó de funcionar tras una actualización de Windows...',
+  supportSend:'Enviar →',supportClear:'✕ Limpiar',
+  supportSim:[
+    'Ejecutando diagnóstico rápido de tu problema.',
+    'Paso 1: Verifica lo básico — ¿el dispositivo está encendido y todos los cables conectados?',
+    'Paso 2: Reinicia el dispositivo y la computadora host. Muchos problemas se resuelven con un reinicio.',
+    'Paso 3: Revisa el Administrador de Dispositivos (Windows) o Preferencias del Sistema (Mac) — los triángulos amarillos indican problemas de driver.',
+    'Paso 4: Actualiza o reinstala el driver desde el sitio oficial del fabricante. Para impresoras, vuelve a ejecutar el asistente de instalación.',
+    'Si no se resuelve, envíame el mensaje de error exacto y escalaré el diagnóstico. La mayoría de problemas de IT tienen solución simple una vez que aislamos la causa.',
+  ],
+  reviewsTitle:'Reseñas de Clientes',reviewsSubtitle:'Opiniones reales de clientes reales.',
+  reviewPrompt:'¿Cómo fue tu experiencia?',reviewPH:'Cuéntales a otros qué construyeron juntos y cómo fue...',
+  reviewName:'Tu nombre o iniciales',reviewSubmit:'Enviar Reseña',
+  reviewThankYou:'✓ ¡Gracias! Tu reseña ya está en vivo.',
+  reviewSharePrompt:'¡Nos diste 5 estrellas! Ayuda a otros a encontrarnos:',
+  reviewCopyLink:'📋 Copiar Enlace',reviewShareLI:'Compartir en LinkedIn',reviewCopied:'✓ ¡Copiado!',
+  noReviews:'Aún no hay reseñas — ¡sé el primero!',
+},
+};
+
+/* ══ CANVAS GRID ══ */
+(function(){
+  const cv=document.getElementById('bg-canvas'),ctx=cv.getContext('2d');
+  function r(){cv.width=innerWidth;cv.height=innerHeight;}
+  r();window.addEventListener('resize',r);
+  function d(){
+    ctx.clearRect(0,0,cv.width,cv.height);
+    ctx.strokeStyle='rgba(0,200,150,0.065)';ctx.lineWidth=.5;
+    const s=56;
+    for(let x=0;x<cv.width;x+=s){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,cv.height);ctx.stroke();}
+    for(let y=0;y<cv.height;y+=s){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(cv.width,y);ctx.stroke();}
+  }
+  d();window.addEventListener('resize',d);
+})();
+
+/* ══ CLOCK ══ */
+function tickClock(){
+  const d=new Date();
+  document.getElementById('clock').textContent=String(d.getHours()).padStart(2,'0')+':'+String(d.getMinutes()).padStart(2,'0');
+}
+tickClock();setInterval(tickClock,10000);
+
+/* ══ SOUND ══ */
+function pc(){if(!soundEnabled)return;try{const ac=new AudioContext(),o=ac.createOscillator(),g=ac.createGain();o.connect(g);g.connect(ac.destination);o.frequency.value=880;g.gain.setValueAtTime(.12,ac.currentTime);g.gain.exponentialRampToValueAtTime(.001,ac.currentTime+.06);o.start();o.stop(ac.currentTime+.06);}catch(e){}}
+function toggleSound(){soundEnabled=!soundEnabled;document.getElementById('vol-btn').textContent=soundEnabled?'🔊':'🔇';}
+
+/* ══ WELCOME ══ */
+function closeWelcome(){const el=document.getElementById('welcome-overlay');el.style.opacity='0';setTimeout(()=>{el.style.display='none';},420);}
+(function(){
+  const lang=(navigator.language||'en').toLowerCase().startsWith('es')?'es':'en';
+  if(lang==='es'){document.getElementById('wc-title').textContent=TR.es.wcTitle;document.getElementById('wc-body').textContent=TR.es.wcBody;}
+})();
+
+/* ══ LANGUAGE ══ */
+function setLang(l){
+  LANG=l;
+  document.getElementById('html-root').lang=l;
+  document.getElementById('btn-en').classList.toggle('active',l==='en');
+  document.getElementById('btn-es').classList.toggle('active',l==='es');
+  const u=(id,k)=>{const e=document.getElementById(id);if(e)e.textContent=t(k);};
+  u('tb-status','status');u('hero-sub','heroSub');
+  u('lbl-profile','lProfile');u('lbl-make','lMake');u('lbl-docker','lDocker');u('lbl-agents','lAgents');
+  u('lbl-dev','lDev');u('lbl-writing','lWriting');u('lbl-office','lOffice');u('lbl-quote','lQuote');
+  u('dk-ptxt','dkP');u('dk-atxt','dkA');u('dk-stxt','dkS');u('dk-rtxt','dkR');u('dk-qtxt','dkQ');
+  if(currentWin){const w=currentWin;closeWin();setTimeout(()=>openWin(w),320);}
+}
+
+/* ══ COLLAPSIBLE ══ */
+function toggleCollapsible(btn){
+  btn.classList.toggle('open');
+  const c=btn.nextElementSibling;c.classList.toggle('open');
+}
+
+/* ══ DATA.JSON LOADER ══ */
+async function loadProfileData(){
+  try{
+    const res=await fetch(DATA_JSON_URL,{cache:'no-store'});
+    if(!res.ok)throw new Error('not found');
+    profileData=await res.json();
+  }catch(e){profileData=null;}
+}
+loadProfileData();
+function pd(key){
+  if(profileData&&profileData[LANG]&&profileData[LANG][key]!==undefined)return profileData[LANG][key];
+  return t(key);
+}
+
+/* ══ REVIEWS localStorage ══ */
+function loadReviews(){try{reviews=JSON.parse(localStorage.getItem('oa-reviews')||'[]');}catch(e){reviews=[];}}
+function saveReviews(){try{localStorage.setItem('oa-reviews',JSON.stringify(reviews));}catch(e){}}
+loadReviews();
+
+/* ══ MODAL ENGINE ══ */
+const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','support','reviews'];
+function openWin(id){
+  currentWin=id;
+  const builders={profile:buildProfile,make:buildMake,docker:buildDocker,agents:buildAgents,
+    dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,
+    support:buildSupport,reviews:buildReviews};
+  const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
+    dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),
+    support:t('tSupport'),reviews:t('tReviews')};
+  document.getElementById('modal-title').textContent=titles[id]||'—';
+  document.getElementById('modal-body').innerHTML=builders[id]?builders[id]():'';
+  const ov=document.getElementById('modal-overlay'),win=document.getElementById('modal-win');
+  ov.classList.add('open');
+  requestAnimationFrame(()=>requestAnimationFrame(()=>win.classList.add('open')));
+  ALL_WINS.forEach(k=>{document.getElementById('dk-'+k)?.classList.toggle('active',k===id);});
+  if(id==='profile')setTimeout(animateSkills,350);
+  if(id==='docker')startDockerMonitor();
+  if(id==='quote')setTimeout(restoreForm,100);
+}
+function closeWin(){
+  stopDockerMonitor();
+  makeRunning=false;hcRunning=false;agentRunning=false;supportRunning=false;
+  const ov=document.getElementById('modal-overlay'),win=document.getElementById('modal-win');
+  win.classList.add('closing');win.classList.remove('open');
+  setTimeout(()=>{
+    ov.classList.remove('open');win.classList.remove('closing');
+    document.getElementById('modal-body').innerHTML='';
+    currentWin=null;
+    ALL_WINS.forEach(k=>{document.getElementById('dk-'+k)?.classList.remove('active');});
+  },320);
+}
+document.getElementById('modal-overlay').addEventListener('click',function(e){if(e.target===this)closeWin();});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeWin();});
+
+/* ══ WINDOW 1 — PROFILE ══ */
+function buildProfile(){
+  const isLive=profileData!==null;
+  const skills=pd('skills'),exp=pd('exp'),certs=pd('certs');
+  return `
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:14px;">
+  <div style="display:flex;align-items:center;gap:12px;">
+    <div style="width:50px;height:50px;border-radius:50%;background:rgba(0,200,150,.1);border:2px solid rgba(0,200,150,.3);display:flex;align-items:center;justify-content:center;font-size:20px;flex-shrink:0;">🧑‍💻</div>
+    <div>
+      <div style="font-weight:600;font-size:14px;">Hector E. Benitez Ortega</div>
+      <div class="muted" style="margin-top:2px;">AI Automation Engineer</div>
+      <div style="display:flex;flex-wrap:wrap;gap:5px;margin-top:5px;">
+        <span class="badge bg">${t('status')}</span>
+        <span class="badge bk">Las Vegas, NV</span>
+        <span class="badge bk">🇺🇸 EN / 🇨🇺 ES</span>
+      </div>
+    </div>
+  </div>
+  <span class="ds-pill ${isLive?'ds-live':''}" title="${isLive?'Loaded from data.json — Make.com keeps this updated':'Using built-in defaults. Add data.json to repo to enable live sync.'}">${isLive?'🟢':'⚪'} ${isLive?t('dsLive'):t('dsFallback')}</span>
+</div>
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${pd('bio')}</p>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;">
+  <span class="badge bg">Python</span><span class="badge bg">FastAPI</span><span class="badge bg">CrewAI</span>
+  <span class="badge ba">Docker</span><span class="badge ba">Make.com</span>
+  <span class="badge bp">SQLite</span><span class="badge bk">GitHub Pages</span>
+</div>
+<button class="collapsible-btn open" onclick="toggleCollapsible(this)"><span>${t('skillsTitle')}</span><span class="caret">+</span></button>
+<div class="collapsible-content open" style="padding-top:12px;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    ${skills.map(s=>`<div><div style="display:flex;justify-content:space-between;margin-bottom:3px;"><span style="font-size:12px;color:var(--t2);">${s.n}</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);">${s.p}%</span></div><div class="skill-track"><div class="skill-fill" data-w="${s.p}" style="background:${s.c};"></div></div></div>`).join('')}
+  </div>
+</div>
+<div class="sep"></div>
+<button class="collapsible-btn open" onclick="toggleCollapsible(this)"><span>${t('expTitle')}</span><span class="caret">+</span></button>
+<div class="collapsible-content open" style="padding-top:12px;">
+  <div style="display:flex;flex-direction:column;gap:10px;">
+    ${exp.map((e,i)=>`<div style="display:flex;gap:10px;align-items:flex-start;"><div style="width:8px;height:8px;border-radius:50%;flex-shrink:0;margin-top:4px;background:${i===0?'var(--g)':i<3?'var(--a)':'var(--t3)'};box-shadow:${i===0?'0 0 7px var(--g)':i<3?'0 0 5px var(--a)':'none'};"></div><div><div style="font-size:12px;font-weight:500;">${e.t}</div><div class="muted" style="font-size:11px;margin-top:1px;">${e.s}</div></div></div>`).join('')}
+  </div>
+</div>
+<div class="sep"></div>
+<button class="collapsible-btn" onclick="toggleCollapsible(this)"><span>${t('certsTitle')}</span><span class="caret">+</span></button>
+<div class="collapsible-content" style="padding-top:12px;">
+  <div style="display:flex;flex-direction:column;gap:6px;">
+    ${certs.map(c=>`<div class="muted" style="font-size:11px;line-height:1.5;">${c}</div>`).join('')}
+  </div>
+</div>
+<div style="margin-top:14px;background:${isLive?'rgba(0,200,150,.05)':'rgba(245,158,11,.05)'};border:1px solid ${isLive?'rgba(0,200,150,.18)':'rgba(245,158,11,.18)'};border-radius:8px;padding:10px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:${isLive?'var(--g)':'var(--a)'};">
+  ${isLive?'✓ Profile data loaded from <strong>data.json</strong> — auto-synced by Make.com automation.':'💡 Add <strong>data.json</strong> to your repo and connect a Make.com scenario to sync your LinkedIn data here automatically.'}
+</div>`;
+}
+function animateSkills(){document.querySelectorAll('.skill-fill').forEach(el=>{el.style.width=el.dataset.w+'%';});}
+
+/* ══ WINDOW 2 — MAKE SIMULATOR ══ */
+function buildMake(){
+  const nodes=t('makeNodes'),outs=t('makeOuts');
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('makeDesc')}</p>
+<div style="background:var(--bg0);border:1px solid rgba(245,158,11,.14);border-radius:12px;padding:14px;margin-bottom:12px;">
+  <div class="slabel" style="color:var(--a);margin-bottom:10px;">Automation Pipeline</div>
+  <div style="display:flex;align-items:center;overflow-x:auto;padding-bottom:4px;-webkit-overflow-scrolling:touch;">
+    ${nodes.map((n,i)=>`<div class="fnode" id="${n.id}" style="min-width:68px;"><div style="font-size:19px;">${n.icon}</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--a);margin-top:3px;">${n.l}</div><div style="font-size:9px;color:var(--t3);margin-top:2px;">${n.s}</div></div>${i<nodes.length-1?'<div class="fpipe" id="fp'+(i+1)+'"></div>':''}`).join('')}
+  </div>
+  <div style="display:flex;gap:8px;margin-top:10px;justify-content:center;flex-wrap:wrap;">
+    ${outs.map(o=>`<div class="fnode" id="${o.id}" style="min-width:82px;"><div style="font-size:17px;">${o.icon}</div><div style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--g);margin-top:3px;">${o.l}</div><div style="font-size:9px;color:var(--t3);margin-top:2px;">${o.s}</div></div>`).join('')}
+  </div>
+</div>
+<div class="log-area" id="make-log" style="margin-bottom:12px;"><span style="color:var(--t3);">${t('makeLogWait')}</span></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;">
+  <button class="btn btn-a" id="make-btn" onclick="runMakeSim()">${t('makeBtnTrigger')}</button>
+  <button class="btn btn-k" onclick="resetMakeSim()">${t('makeBtnReset')}</button>
+</div>`;
+}
+function resetMakeSim(){
+  makeRunning=false;
+  ['mn-f','mn-h','mn-p','mn-r','mn-s','mn-e','mn-w'].forEach(id=>{const e=document.getElementById(id);if(e)e.className='fnode';});
+  for(let i=1;i<=3;i++){const p=document.getElementById('fp'+i);if(p)p.className='fpipe';}
+  const log=document.getElementById('make-log');
+  if(log)log.innerHTML=`<span style="color:var(--t3);">${t('makeLogReset')}</span>`;
+  const btn=document.getElementById('make-btn');
+  if(btn){btn.disabled=false;btn.textContent=t('makeBtnTrigger');}
+}
+function runMakeSim(){
+  if(makeRunning)return;makeRunning=true;
+  const btn=document.getElementById('make-btn');
+  if(btn){btn.disabled=true;btn.textContent='Running...';}
+  const log=document.getElementById('make-log');if(log)log.innerHTML='';
+  const ld=t('makeLog');
+  const seq=[
+    {node:'mn-f',pipe:null,cls:'lit-g',li:0},
+    {node:'mn-h',pipe:'fp1',cls:'lit-g',li:1},
+    {node:'mn-p',pipe:'fp2',cls:'lit-a',li:2},
+    {node:'mn-r',pipe:'fp3',cls:'lit-a',li:3},
+    {node:'mn-s',pipe:null,cls:'lit-done',li:4},
+    {node:'mn-e',pipe:null,cls:'lit-done',li:5},
+    {node:'mn-w',pipe:null,cls:'lit-done',li:6},
+  ];
+  seq.forEach(({node,pipe,cls,li},i)=>{
+    setTimeout(()=>{
+      const el=document.getElementById(node);if(el)el.className='fnode '+cls;
+      if(pipe){const p=document.getElementById(pipe);if(p)p.className='fpipe lit';}
+      if(log&&ld[li]){
+        const d=document.createElement('div');d.style.cssText=`color:${ld[li].c};opacity:0;transition:opacity .2s;`;d.textContent=ld[li].t;log.appendChild(d);
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{d.style.opacity='1';}));log.scrollTop=log.scrollHeight;
+      }
+      if(i===seq.length-1)setTimeout(()=>{makeRunning=false;if(btn){btn.disabled=false;btn.textContent=t('makeBtnAgain');}},500);
+    },i*530);
+  });
+  printToDockerLog('Processing new incoming webhook trigger...');
+}
+
+/* ══ WINDOW 3 — DOCKER MONITOR ══ */
+function buildDocker(){
+  const ctrs=t('containers');
+  const isLive=WEBHOOK_IA_URL&&WEBHOOK_IA_URL.trim()!=='';
+  return `
+<div style="display:flex;align-items:center;gap:10px;margin-bottom:12px;flex-wrap:wrap;">
+  <p style="color:var(--t2);font-size:13px;line-height:1.7;flex:1;">${t('dockerDesc')}</p>
+  <span class="status-led ${isLive?'led-green':'led-yellow'}" id="docker-led">
+    <div class="led-dot" style="background:${isLive?'var(--ok)':'var(--a)'};box-shadow:0 0 5px ${isLive?'var(--ok)':'var(--a)'}; animation:pdot 2s ease infinite;"></div>
+    ${isLive?'ONLINE':'SIMULATED ENGINE'}
+  </span>
+</div>
+<div class="icard" style="margin-bottom:12px;">
+  <div class="slabel" style="color:var(--p);">${t('containersTitle')}</div>
+  <div style="display:flex;flex-direction:column;gap:7px;">
+    ${ctrs.map(c=>`<div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg2);border:1px solid var(--bdr);border-radius:8px;padding:8px 12px;"><div style="display:flex;align-items:center;gap:7px;"><div style="width:6px;height:6px;border-radius:50%;background:var(--ok);box-shadow:0 0 5px var(--ok);flex-shrink:0;"></div><span style="font-family:'JetBrains Mono',monospace;font-size:11px;">${c}</span></div><span class="badge bg" style="font-size:9px;">running</span></div>`).join('')}
+  </div>
+</div>
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin-bottom:12px;">
+  <div class="mcard"><div class="slabel">${t('dCPU')}</div><div class="mnum" id="cpu-val" style="color:var(--g);">—</div><div class="btrack"><div id="cpu-bar" class="binner" style="background:linear-gradient(90deg,var(--g),rgba(0,200,150,.5));width:0%;"></div></div></div>
+  <div class="mcard"><div class="slabel">${t('dMem')}</div><div class="mnum" id="mem-val" style="color:var(--a);">—</div><div class="btrack"><div id="mem-bar" class="binner" style="background:linear-gradient(90deg,var(--a),rgba(245,158,11,.5));width:0%;"></div></div></div>
+  <div class="mcard"><div class="slabel">${t('dNet')}</div><div class="mnum" id="net-val" style="color:var(--p);">—</div><div class="btrack"><div id="net-bar" class="binner" style="background:linear-gradient(90deg,var(--p),rgba(139,92,246,.5));width:0%;"></div></div></div>
+</div>
+<div class="log-area" id="docker-console" style="margin-bottom:12px;max-height:160px;"><span style="color:var(--t3);">${t('healthWait')}</span></div>
+<button class="btn btn-p" id="hc-btn" onclick="runHealthCheck()">${t('healthBtn')}</button>`;
+}
+function startDockerMonitor(){
+  function tick(){
+    const cpu=Math.floor(14+Math.random()*36),mem=Math.floor(40+Math.random()*28),net=Math.floor(6+Math.random()*72);
+    const sv=(id,v)=>{const e=document.getElementById(id);if(e)e.style.width=v+'%';};
+    const st=(id,v)=>{const e=document.getElementById(id);if(e)e.textContent=v+'%';};
+    st('cpu-val',cpu);sv('cpu-bar',cpu);st('mem-val',mem);sv('mem-bar',mem);st('net-val',net);sv('net-bar',net);
+  }
+  tick();dockerTimer=setInterval(tick,1500);
+}
+function stopDockerMonitor(){if(dockerTimer){clearInterval(dockerTimer);dockerTimer=null;}}
+function printToDockerLog(msg){
+  const log=document.getElementById('docker-console');if(!log)return;
+  const d=document.createElement('div');d.style.cssText='color:var(--a);opacity:0;transition:opacity .2s;';
+  d.textContent='['+new Date().toLocaleTimeString('en-US',{hour12:false})+'] '+msg;
+  if(log.querySelector('span'))log.innerHTML='';
+  log.appendChild(d);
+  requestAnimationFrame(()=>requestAnimationFrame(()=>{d.style.opacity='1';}));
+  log.scrollTop=log.scrollHeight;
+}
+function runHealthCheck(){
+  if(hcRunning)return;hcRunning=true;
+  const btn=document.getElementById('hc-btn'),log=document.getElementById('docker-console');
+  if(btn){btn.disabled=true;btn.textContent=t('healthBtnRunning');}
+  if(log)log.innerHTML='';
+  const lines=t('healthLines');
+  const doLines=()=>{
+    lines.forEach(({t:txt,c},i)=>{
+      setTimeout(()=>{
+        if(!log)return;
+        if(!txt){log.innerHTML+='<br>';return;}
+        const d=document.createElement('div');d.style.cssText=`color:${c};opacity:0;transition:opacity .15s;`;d.textContent=txt;log.appendChild(d);
+        requestAnimationFrame(()=>requestAnimationFrame(()=>{d.style.opacity='1';}));log.scrollTop=log.scrollHeight;
+        if(i===lines.length-1)setTimeout(()=>{hcRunning=false;if(btn){btn.disabled=false;btn.textContent=t('healthBtnAgain');}},400);
+      },i*130);
+    });
+  };
+  if(WEBHOOK_IA_URL&&WEBHOOK_IA_URL.trim()!==''){
+    fetch(WEBHOOK_IA_URL+'?action=health',{method:'GET',signal:makeTimeoutSignal(4000)}).then(r=>{
+      const led=document.getElementById('docker-led');
+      if(led){led.className='status-led led-green';led.innerHTML='<div class="led-dot" style="background:var(--ok);box-shadow:0 0 5px var(--ok);animation:pdot 2s ease infinite;"></div>ONLINE';}
+      doLines();
+    }).catch(()=>{
+      const led=document.getElementById('docker-led');
+      if(led){led.className='status-led led-yellow';led.innerHTML='<div class="led-dot" style="background:var(--a);box-shadow:0 0 5px var(--a);animation:pdot 2s ease infinite;"></div>SIMULATED ENGINE';}
+      doLines();
+    });
+  }else{doLines();}
+}
+
+/* ══ WINDOW 4 — AI AGENTS ══ */
+function buildAgents(){
+  const roster=t('roster'),qm=t('quickMissions');
+  const isLive=WEBHOOK_IA_URL&&WEBHOOK_IA_URL.trim()!=='';
+  return `
+<div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:8px;margin-bottom:12px;">
+  <p style="color:var(--t2);font-size:13px;line-height:1.6;flex:1;min-width:180px;">${t('agentsDesc')}</p>
+  <span class="status-led ${isLive?'led-green':'led-yellow'}"><div class="led-dot" style="background:${isLive?'var(--ok)':'var(--a)'};box-shadow:0 0 5px ${isLive?'var(--ok)':'var(--a)'}; animation:pdot 2s ease infinite;"></div>${isLive?'Webhook Live':'Simulation Mode'}</span>
+</div>
+<div class="slabel">${t('rosterTitle')}</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+  ${roster.map(a=>`<div style="display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:5px 10px;"><span style="font-size:13px;">${a.icon}</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:${a.c};">${a.n}</span><div style="width:5px;height:5px;border-radius:50%;background:${a.c};box-shadow:0 0 4px ${a.c};"></div></div>`).join('')}
+</div>
+<div class="slabel">${t('quickTitle')}</div>
+<div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
+  ${qm.map(m=>`<button class="btn btn-g btn-sm" onclick="runSimMission('${m.k}')">${m.l}</button>`).join('')}
+  <button class="btn btn-k btn-sm" onclick="clearAgentChat()">${t('clearBtn')}</button>
+</div>
+<div id="agent-chat" style="background:var(--bg0);border:1px solid var(--bdr);border-radius:12px;padding:12px;min-height:100px;max-height:220px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;flex-direction:column;gap:8px;"></div>
+<div class="chat-input-area">
+  <textarea class="chat-input" id="agent-input" rows="1" placeholder="${t('inputPH')}" onkeydown="agentKey(event)"></textarea>
+  <button class="btn btn-g btn-sm" id="agent-send" onclick="sendAgentMsg()" style="flex-shrink:0;">${t('sendBtn')}</button>
+</div>
+<div style="display:flex;align-items:center;gap:10px;margin-top:10px;">
+  <span class="slabel" style="margin:0;">${t('teamXP')}</span>
+  <div style="flex:1;height:5px;background:var(--bg3);border-radius:3px;overflow:hidden;"><div id="xp-bar" style="height:100%;width:${Math.min(totalXP/20,100)}%;background:linear-gradient(90deg,var(--g),var(--a));border-radius:3px;transition:width 1s ease;"></div></div>
+  <span style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--a);" id="xp-label">${totalXP} XP</span>
+</div>`;
+}
+function clearAgentChat(){agentRunning=false;const c=document.getElementById('agent-chat');if(c)c.innerHTML='';}
+function agentKey(e){const ta=e.target;ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,90)+'px';if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAgentMsg();}}
+function pushBubble(chat,type,text,ag){
+  const w=document.createElement('div');
+  if(type==='user'){w.style.cssText='display:flex;justify-content:flex-end;';const b=document.createElement('div');b.className='bubble bu';b.textContent=text;w.appendChild(b);}
+  else if(type==='sys'){w.style.display='flex';const b=document.createElement('div');b.className='bubble bs';b.textContent=text;w.appendChild(b);}
+  else{w.style.cssText='display:flex;flex-direction:column;align-items:flex-start;gap:3px;';if(ag){const tag=document.createElement('div');tag.className='atag';tag.textContent=ag;w.appendChild(tag);}const b=document.createElement('div');b.className='bubble ba-chat';b.textContent=text;w.appendChild(b);}
+  chat.appendChild(w);chat.scrollTop=chat.scrollHeight;
+}
+function showTyping(chat){const d=document.createElement('div');d.id='typing-ind';d.className='typing-dots';d.innerHTML='<span></span><span></span><span></span>';chat.appendChild(d);chat.scrollTop=chat.scrollHeight;}
+function hideTyping(){const e=document.getElementById('typing-ind');if(e)e.remove();}
+function updateXP(){const xb=document.getElementById('xp-bar'),xl=document.getElementById('xp-label');if(xb)xb.style.width=Math.min(totalXP/20,100)+'%';if(xl)xl.textContent=totalXP+' XP';}
+async function sendAgentMsg(){
+  if(agentRunning)return;
+  const inp=document.getElementById('agent-input'),msg=inp?inp.value.trim():'';if(!msg)return;
+  const chat=document.getElementById('agent-chat');if(!chat)return;
+  pushBubble(chat,'user',msg);
+  if(inp){inp.value='';inp.style.height='auto';}
+  agentRunning=true;
+  const btn=document.getElementById('agent-send');if(btn)btn.disabled=true;
+  showTyping(chat);
+  if(WEBHOOK_IA_URL&&WEBHOOK_IA_URL.trim()!==''){
+    try{
+      const res=await fetch(WEBHOOK_IA_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message:msg,lang:LANG,timestamp:new Date().toISOString()})});
+      hideTyping();
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      const data=await res.json();
+      const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
+      const agN=data.agent||(LANG==='es'?'Agente IA':'AI Agent');
+      const lns=reply.split('\n').filter(l=>l.trim());
+      if(lns.length===0){pushBubble(chat,'agent',reply,agN);agentRunning=false;if(btn)btn.disabled=false;}
+      else{lns.forEach((line,i)=>{setTimeout(()=>{pushBubble(chat,'agent',line,i===0?agN:null);if(i===lns.length-1){agentRunning=false;if(btn)btn.disabled=false;totalXP+=50;updateXP();}},i*280);});}
+    }catch(err){hideTyping();pushBubble(chat,'sys','[Error] '+err.message);agentRunning=false;if(btn)btn.disabled=false;}
+  }else{
+    setTimeout(()=>{
+      hideTyping();
+      const simLines=t('simMsg').split('\n').filter(l=>l.trim());
+      simLines.forEach((line,i)=>{setTimeout(()=>{
+        if(i===0)pushBubble(chat,'sys',line);else pushBubble(chat,'agent',line,null);
+        if(i===simLines.length-1){agentRunning=false;if(btn)btn.disabled=false;totalXP+=20;updateXP();}
+      },i*380);});
+    },1500);
+  }
+}
+function runSimMission(key){
+  if(agentRunning)return;agentRunning=true;
+  const mission=t('missions')[key];if(!mission)return;
+  const chat=document.getElementById('agent-chat');if(!chat)return;
+  pushBubble(chat,'user','▶ '+mission.label);
+  mission.steps.forEach(({ag,r,msg},i)=>{
+    setTimeout(()=>{
+      if(r==='s')pushBubble(chat,'sys','['+ag+'] '+msg);else pushBubble(chat,'agent',msg,ag);
+      if(i===mission.steps.length-1){const xp=parseInt(msg.match(/\+(\d+) XP/)?.[1])||150;totalXP+=xp;updateXP();setTimeout(()=>{agentRunning=false;const b=document.getElementById('agent-send');if(b)b.disabled=false;},400);}
+    },i*950);
+  });
+}
+
+/* ══ WINDOW 5 — DEV ══ */
+function buildDev(){
+  const secs=t('devSections');
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('devDesc')}</p>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;">
+  <span class="badge bg">Python</span><span class="badge bg">FastAPI</span><span class="badge bg">CrewAI</span>
+  <span class="badge ba">Docker</span><span class="badge ba">Make.com</span>
+  <span class="badge bp">Godot</span><span class="badge bp">GDScript</span><span class="badge bk">SQLite</span>
+</div>
+${secs.map(s=>`
+<button class="collapsible-btn open" onclick="toggleCollapsible(this)"><span>${s.title}</span><span class="caret">+</span></button>
+<div class="collapsible-content open" style="padding:10px 0;"><div class="icard"><p style="color:var(--t2);font-size:13px;line-height:1.75;">${s.body}</p></div></div>`).join('')}
+<div class="sep"></div>
+<div style="background:rgba(34,197,94,.05);border:1px solid rgba(34,197,94,.18);border-radius:8px;padding:12px 14px;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ok);margin-bottom:8px;">📦 Project Documentation</div>
+  <div style="display:flex;flex-wrap:wrap;gap:8px;">
+    <a href="https://github.com/Hectorortega642" target="_blank" rel="noopener" class="btn btn-ok btn-sm">⌨ GitHub Repos ↗</a>
+    <a href="https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296" target="_blank" rel="noopener" class="btn btn-k btn-sm">in LinkedIn ↗</a>
+  </div>
+</div>`;
+}
+
+/* ══ WINDOW 6 — WRITING ══ */
+function buildWriting(){
+  const secs=t('writingSections');
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('writingDesc')}</p>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;">
+  <span class="badge bg">EN</span><span class="badge bg">ES</span>
+  <span class="badge ba">Articles</span><span class="badge ba">Papers</span>
+  <span class="badge bp">Translation</span><span class="badge bk">LinkedIn Profiles</span>
+</div>
+${secs.map(s=>`
+<button class="collapsible-btn open" onclick="toggleCollapsible(this)"><span>${s.title}</span><span class="caret">+</span></button>
+<div class="collapsible-content open" style="padding:10px 0;"><div class="icard"><p style="color:var(--t2);font-size:13px;line-height:1.75;">${s.body}</p></div></div>`).join('')}
+<div class="sep"></div>
+<p style="color:var(--t2);font-size:12px;font-style:italic;">Rates vary by length and complexity. ${LANG==='es'?'Solicita una cotización para un estimado preciso.':'Request a quote for a precise estimate.'}</p>`;
+}
+
+/* ══ WINDOW 7 — OFFICE ══ */
+function buildOffice(){
+  const secs=t('officeSections');
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('officeDesc')}</p>
+<div style="display:flex;flex-wrap:wrap;gap:5px;margin-bottom:14px;">
+  <span class="badge bg">Google Sheets</span><span class="badge bg">Excel</span>
+  <span class="badge ba">Data Entry</span><span class="badge bk">EN / ES</span>
+</div>
+${secs.map(s=>`
+<button class="collapsible-btn open" onclick="toggleCollapsible(this)"><span>${s.title}</span><span class="caret">+</span></button>
+<div class="collapsible-content open" style="padding:10px 0;"><div class="icard"><p style="color:var(--t2);font-size:13px;line-height:1.75;">${s.body}</p></div></div>`).join('')}`;
+}
+
+/* ══ WINDOW 8 — QUOTE ══ */
+const QUOTE_RATES={
+  'Automation Pipeline (Make.com)':75,'AI Agent System (Python/CrewAI)':120,
+  'Docker Deployment':90,'Web Application':100,
+  'Editorial / Writing':35,'Translation / Transcription':30,
+  'Data Management':25,'IT Support / Consulting':40,'Other':50,
+  'Pipeline de Automatización (Make.com)':75,'Sistema de Agentes IA (Python/CrewAI)':120,
+  'Despliegue Docker':90,'Aplicación Web':100,
+  'Redacción Editorial':35,'Traducción / Transcripción':30,
+  'Gestión de Datos':25,'Soporte IT / Consultoría':40,'Otro':50,
+};
+function buildQuote(){
+  const types=t('quoteTypes');
+  return `
+<h3 style="font-family:'JetBrains Mono',monospace;font-size:14px;margin-bottom:14px;">${t('quoteTitle')}</h3>
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px;">
+  <input id="q-name" class="form-input" type="text" placeholder="${t('quoteName')}" oninput="saveForm()"/>
+  <input id="q-company" class="form-input" type="text" placeholder="${t('quoteCompany')}" oninput="saveForm()"/>
+  <select id="q-service" class="form-input" onchange="saveForm()"><option value="">${t('quoteService')}</option>${types.map(tp=>`<option value="${tp}">${tp}</option>`).join('')}</select>
+  <textarea id="q-desc" class="form-input" rows="4" placeholder="${t('quotePlaceholder')}" oninput="saveForm()"></textarea>
+  <p style="font-size:11px;color:var(--t3);line-height:1.5;">${t('quotePrivacy')}</p>
+</div>
+<div id="q-autosave" style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);margin-bottom:8px;"></div>
+<div style="display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px;">
+  <button class="btn btn-g" onclick="calcQuote()">${t('quoteBtn')}</button>
+  <button class="btn btn-k btn-sm" onclick="resetQuote()">${t('quoteReset')}</button>
+</div>
+<div id="q-result"></div>`;
+}
+function saveForm(){
+  const d={name:document.getElementById('q-name')?.value||'',company:document.getElementById('q-company')?.value||'',service:document.getElementById('q-service')?.value||'',desc:document.getElementById('q-desc')?.value||''};
+  try{localStorage.setItem('oa-quote',JSON.stringify(d));}catch(e){}
+  if(WEBHOOK_DATABASE_URL&&WEBHOOK_DATABASE_URL.trim()!==''&&(hasText(d.name)||hasText(d.company)||hasText(d.service)||hasText(d.desc))){
+    fetch(WEBHOOK_DATABASE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'quote',...d,timestamp:new Date().toISOString()})}).catch(()=>{});
+  }
+  const as=document.getElementById('q-autosave');if(as)as.textContent=t('quoteSaved');
+  if(d.name)printToDockerLog('Processing new incoming request from '+d.name+'...');
+}
+function restoreForm(){
+  try{
+    const d=JSON.parse(localStorage.getItem('oa-quote')||'{}');
+    const f=(id,v)=>{const e=document.getElementById(id);if(e&&v)e.value=v;};
+    f('q-name',d.name);f('q-company',d.company);f('q-service',d.service);f('q-desc',d.desc);
+    if(d.name||d.service){const as=document.getElementById('q-autosave');if(as)as.textContent=t('quoteSaved');}
+  }catch(e){}
+}
+function resetQuote(){
+  try{localStorage.removeItem('oa-quote');}catch(e){}
+  ['q-name','q-company','q-desc'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+  const sel=document.getElementById('q-service');if(sel)sel.value='';
+  const r=document.getElementById('q-result');if(r)r.innerHTML='';
+  const as=document.getElementById('q-autosave');if(as)as.textContent='';
+}
+function calcQuote(){
+  const name=document.getElementById('q-name')?.value.trim()||'';
+  const service=document.getElementById('q-service')?.value||'';
+  const desc=document.getElementById('q-desc')?.value.trim()||'';
+  if(!service){alert(LANG==='es'?'Por favor selecciona un tipo de servicio.':'Please select a service type.');return;}
+  const rate=QUOTE_RATES[service]||50;
+  const complexity=desc.length>200?1.5:desc.length>80?1.2:1;
+  const base=rate*complexity;
+  const low=Math.round(base*0.9),high=Math.round(base*1.4),roi=Math.round(high*4);
+  const r=document.getElementById('q-result');if(!r)return;
+  r.innerHTML=`
+<div style="background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.2);border-radius:12px;padding:16px;">
+  <div style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--g);margin-bottom:10px;">💡 ${LANG==='es'?'Estimación de tu proyecto':'Your Project Estimate'}</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:12px;">
+    <div class="icard" style="text-align:center;"><div style="font-size:22px;font-weight:700;color:var(--g);font-family:'JetBrains Mono',monospace;">$${low}–$${high}</div><div style="color:var(--t2);font-size:11px;margin-top:3px;">${LANG==='es'?'Rango de Inversión':'Investment Range'}</div></div>
+    <div class="icard" style="text-align:center;"><div style="font-size:22px;font-weight:700;color:var(--a);font-family:'JetBrains Mono',monospace;">~$${roi}</div><div style="color:var(--t2);font-size:11px;margin-top:3px;">${LANG==='es'?'ROI Potencial (4x)':'Potential ROI (4x)'}</div></div>
+  </div>
+  <div style="background:var(--bg3);border-radius:8px;padding:12px;margin-bottom:12px;"><div style="font-size:12px;color:var(--t2);line-height:1.7;">${LANG==='es'?`Este estimado cubre <strong style="color:var(--t1);">${service}</strong> con configuración, pruebas y documentación básica incluidas. El precio refleja valor de mercado competitivo y entrega de calidad empresarial.`:`This estimate covers <strong style="color:var(--t1);">${service}</strong> including setup, testing and basic documentation. The price reflects competitive market value and enterprise-grade delivery.`}</div></div>
+  <div style="display:flex;flex-direction:column;gap:8px;">
+    <button class="paypal-btn" onclick="proceedPayPal(${low},'${service.replace(/'/g,"\\'").replace(/"/g,'&quot;')}')">💳 PayPal — ${LANG==='es'?'Proceder':'Proceed'} ($${low}–$${high})</button>
+    <button class="wa-btn" onclick="sendWhatsApp('${(name||'').replace(/'/g,"\\'").replace(/"/g,'&quot;')}','${service.replace(/'/g,"\\'").replace(/"/g,'&quot;')}',${low},${high})">💬 WhatsApp</button>
+  </div>
+</div>`;
+}
+function proceedPayPal(low,service){window.open(PAYPAL_ME_URL+'/'+low+'/USD?note='+encodeURIComponent(service),'_blank');}
+function sendWhatsApp(name,service,low,high){
+  const msg=LANG==='es'
+    ?`Hola Héctor 👋\n\nMe interesa el servicio: *${service||'consultoría'}*\n${name?'Mi nombre es *'+name+'*.\n':''}Presupuesto estimado: *$${low}–$${high} USD*\n\nMe gustaría hablar sobre los detalles del proyecto. ¿Cuándo podríamos conectar?\n\n_(Mensaje desde Ortega Automations OS)_`
+    :`Hello Héctor 👋\n\nI'm interested in: *${service||'your services'}*\n${name?'My name is *'+name+'*.\n':''}Estimated budget: *$${low}–$${high} USD*\n\nI'd love to discuss the project details. When can we connect?\n\n_(Message from Ortega Automations OS)_`;
+  window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+/* ══ WINDOW 9 — IT SUPPORT ══ */
+function buildSupport(){
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('supportDesc')}</p>
+<div id="support-chat" style="background:var(--bg0);border:1px solid var(--bdr);border-radius:12px;padding:12px;min-height:120px;max-height:260px;overflow-y:auto;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;display:flex;flex-direction:column;gap:8px;"></div>
+<div class="chat-input-area">
+  <textarea class="chat-input" id="support-input" rows="1" placeholder="${t('supportPH')}" onkeydown="supportKey(event)"></textarea>
+  <button class="btn btn-c btn-sm" id="support-send" onclick="sendSupportMsg()" style="flex-shrink:0;">${t('supportSend')}</button>
+</div>
+<button class="btn btn-k btn-sm" onclick="clearSupportChat()" style="margin-top:8px;">${t('supportClear')}</button>`;
+}
+function clearSupportChat(){supportRunning=false;const c=document.getElementById('support-chat');if(c)c.innerHTML='';}
+function supportKey(e){const ta=e.target;ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,90)+'px';if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendSupportMsg();}}
+function pushSupportBubble(chat,type,text){
+  const w=document.createElement('div');
+  if(type==='user'){w.style.cssText='display:flex;justify-content:flex-end;';const b=document.createElement('div');b.className='bubble bu';b.textContent=text;w.appendChild(b);}
+  else{w.style.cssText='display:flex;flex-direction:column;align-items:flex-start;gap:3px;';const tag=document.createElement('div');tag.className='atag';tag.textContent='🔧 IT Support';const b=document.createElement('div');b.className='bubble ba-chat';b.textContent=text;w.appendChild(tag);w.appendChild(b);}
+  chat.appendChild(w);chat.scrollTop=chat.scrollHeight;
+}
+function sendSupportMsg(){
+  if(supportRunning)return;
+  const inp=document.getElementById('support-input'),msg=inp?inp.value.trim():'';if(!msg)return;
+  const chat=document.getElementById('support-chat');if(!chat)return;
+  pushSupportBubble(chat,'user',msg);
+  if(inp){inp.value='';inp.style.height='auto';}
+  supportRunning=true;
+  const btn=document.getElementById('support-send');if(btn)btn.disabled=true;
+  const sim=t('supportSim');
+  const dots=document.createElement('div');dots.id='support-typing';dots.className='typing-dots';dots.innerHTML='<span></span><span></span><span></span>';chat.appendChild(dots);chat.scrollTop=chat.scrollHeight;
+  sim.forEach((line,i)=>{
+    setTimeout(()=>{
+      const td=document.getElementById('support-typing');if(td&&i===0)td.remove();
+      pushSupportBubble(chat,'agent',line);
+      if(i===sim.length-1){supportRunning=false;if(btn)btn.disabled=false;}
+    },(i+1)*900);
+  });
+}
+
+/* ══ WINDOW 10 — REVIEWS ══ */
+function buildReviews(){
+  const defaultReviews=[
+    {name:'Maria G.',stars:5,text:'Hector automated our entire client intake process. What used to take 2 hours now happens in seconds. Absolutely worth every dollar.',time:'May 2026'},
+    {name:'Carlos R.',stars:5,text:'La automatización con Make que construyó Héctor transformó nuestro negocio. Profesional, rápido y explica todo con claridad.',time:'Apr 2026'},
+  ];
+  const all=[...defaultReviews,...reviews];
+  return `
+<h3 style="font-family:'JetBrains Mono',monospace;font-size:13px;margin-bottom:4px;">${t('reviewsTitle')}</h3>
+<p style="color:var(--t2);font-size:12px;margin-bottom:14px;">${t('reviewsSubtitle')}</p>
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:16px;">
+  ${all.length===0?`<div style="color:var(--t3);font-family:'JetBrains Mono',monospace;font-size:12px;">${t('noReviews')}</div>`:
+  all.map(r=>`<div class="icard"><div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:6px;"><span style="font-size:13px;font-weight:500;">${esc(r.name)}</span><div style="display:flex;align-items:center;gap:6px;"><span>${'⭐'.repeat(Math.max(0,Math.min(5,Number(r.stars)||0)))}</span><span style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--t3);">${esc(r.time||'')}</span></div></div><p style="color:var(--t2);font-size:13px;line-height:1.65;">${esc(r.text)}</p></div>`).join('')}
+</div>
+<div class="sep"></div>
+<h4 style="font-family:'JetBrains Mono',monospace;font-size:12px;margin-bottom:10px;">${t('reviewPrompt')}</h4>
+<div style="display:flex;gap:6px;margin-bottom:12px;" id="star-row">
+  ${[1,2,3,4,5].map(n=>`<span class="star" data-star="${n}" onclick="selectStar(${n})">⭐</span>`).join('')}
+</div>
+<div style="display:flex;flex-direction:column;gap:8px;margin-bottom:10px;">
+  <input id="r-name" class="form-input" type="text" placeholder="${t('reviewName')}"/>
+  <textarea id="r-text" class="form-input" rows="3" placeholder="${t('reviewPH')}"></textarea>
+</div>
+<div id="review-feedback" style="font-family:'JetBrains Mono',monospace;font-size:11px;margin-bottom:8px;min-height:18px;"></div>
+<div id="review-share" style="display:none;margin-bottom:10px;">
+  <div style="background:rgba(0,200,150,.05);border:1px solid rgba(0,200,150,.2);border-radius:10px;padding:12px;">
+    <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);margin-bottom:8px;">${t('reviewSharePrompt')}</div>
+    <div style="display:flex;gap:8px;flex-wrap:wrap;">
+      <button class="btn btn-k btn-sm" id="copy-link-btn" onclick="copyPortfolioLink()">${t('reviewCopyLink')}</button>
+      <a class="btn btn-k btn-sm" href="https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent('https://Hectorortega642.github.io')}" target="_blank" rel="noopener">${t('reviewShareLI')}</a>
+    </div>
+  </div>
+</div>
+<button class="btn btn-g" onclick="submitReview()">${t('reviewSubmit')}</button>`;
+}
+function selectStar(n){
+  selectedStars=n;
+  document.querySelectorAll('.star').forEach((s,i)=>{s.classList.toggle('active',i<n);});
+}
+function copyPortfolioLink(){
+  navigator.clipboard.writeText('https://Hectorortega642.github.io').then(()=>{
+    const btn=document.getElementById('copy-link-btn');
+    if(btn){btn.textContent=t('reviewCopied');setTimeout(()=>{btn.textContent=t('reviewCopyLink');},2000);}
+  }).catch(()=>{});
+}
+function submitReview(){
+  const name=document.getElementById('r-name')?.value.trim();
+  const text=document.getElementById('r-text')?.value.trim();
+  const fb=document.getElementById('review-feedback');
+  if(!text||!selectedStars){if(fb){fb.style.color='var(--r)';fb.textContent=LANG==='es'?'Por favor selecciona estrellas y escribe tu reseña.':'Please select stars and write your review.';}return;}
+  const rev={name:name||'Anonymous',stars:Math.max(1,Math.min(5,Number(selectedStars)||0)),text,time:new Date().toLocaleDateString('en-US',{month:'short',year:'numeric'})};
+  reviews.push(rev);saveReviews();
+  if(WEBHOOK_DATABASE_URL&&WEBHOOK_DATABASE_URL.trim()!==''){
+    fetch(WEBHOOK_DATABASE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'review',...rev})}).catch(()=>{});
+  }
+  if(fb){fb.style.color='var(--g)';fb.textContent=t('reviewThankYou');}
+  if(selectedStars>=4){const rs=document.getElementById('review-share');if(rs)rs.style.display='block';}
+  selectedStars=0;
+  setTimeout(()=>{const mb=document.getElementById('modal-body');if(mb)mb.innerHTML=buildReviews();},1400);
+}
+</script></body></html>

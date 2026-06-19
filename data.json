@@ -1,0 +1,46 @@
+{
+  "en": {
+    "bio": "AI Automation Engineer based in Las Vegas. I build bilingual automation systems, AI workflows, Make.com integrations, Docker deployments and practical tools for small businesses.",
+    "exp": [
+      { "t": "AI Automation Engineer", "s": "2025 - Present · Ortega Automations" },
+      { "t": "Automation Builder", "s": "Make.com · Webhooks · Google Sheets · GitHub" },
+      { "t": "Technical Operations", "s": "Las Vegas, NV" }
+    ],
+    "skills": [
+      { "n": "Make.com", "p": 90, "c": "var(--a)" },
+      { "n": "AI Agents", "p": 88, "c": "var(--g)" },
+      { "n": "Python", "p": 85, "c": "var(--g)" },
+      { "n": "Docker", "p": 78, "c": "var(--c)" },
+      { "n": "HTML/CSS/JavaScript", "p": 82, "c": "var(--p)" },
+      { "n": "English / Spanish", "p": 96, "c": "var(--g)" }
+    ],
+    "certs": [
+      "Make.com Fundamentals",
+      "Prompt Engineering",
+      "Computer Programming",
+      "AI Automation Projects"
+    ]
+  },
+  "es": {
+    "bio": "Ingeniero de Automatización IA en Las Vegas. Construyo sistemas bilingües de automatización, flujos con IA, integraciones en Make.com, despliegues Docker y herramientas prácticas para pequeños negocios.",
+    "exp": [
+      { "t": "Ingeniero de Automatización IA", "s": "2025 - Presente · Ortega Automations" },
+      { "t": "Constructor de Automatizaciones", "s": "Make.com · Webhooks · Google Sheets · GitHub" },
+      { "t": "Operaciones Técnicas", "s": "Las Vegas, NV" }
+    ],
+    "skills": [
+      { "n": "Make.com", "p": 90, "c": "var(--a)" },
+      { "n": "Agentes IA", "p": 88, "c": "var(--g)" },
+      { "n": "Python", "p": 85, "c": "var(--g)" },
+      { "n": "Docker", "p": 78, "c": "var(--c)" },
+      { "n": "HTML/CSS/JavaScript", "p": 82, "c": "var(--p)" },
+      { "n": "Inglés / Español", "p": 96, "c": "var(--g)" }
+    ],
+    "certs": [
+      "Fundamentos de Make.com",
+      "Ingeniería de Prompts",
+      "Programación",
+      "Proyectos de Automatización IA"
+    ]
+  }
+}
