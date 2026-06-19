@@ -878,7 +878,7 @@ function buildAgents(){
 </div>
 <div class="slabel">${t('rosterTitle')}</div>
 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
-  ${roster.map(a=>`<button class="btn btn-k btn-sm" onclick="selectedAgent='${a.id||a.n.toLowerCase()}';document.querySelectorAll('.agent-pill').forEach(x=>x.classList.remove('active'));this.classList.add('active')" style="display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:5px 10px;color:${a.c}"><span>${a.icon}</span>${a.n}<span class="dot"></span></button>`).join('')}
+  ${roster.map(a=>`<button type="button" class="agent-pill" onclick="selectedAgent='${a.id||a.n.toLowerCase()}';document.querySelectorAll('.agent-pill').forEach(x=>x.classList.remove('active'));this.classList.add('active');return false;" style="display:flex;align-items:center;gap:5px;background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:5px 10px;color:${a.c};cursor:pointer;position:relative;z-index:10;pointer-events:auto;"><span>${a.icon}</span>${a.n}<span class="dot"></span></button>`).join('')}
 </div>
 <div class="slabel">${t('quickTitle')}</div>
 <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:10px;">
