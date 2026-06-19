@@ -1038,11 +1038,21 @@ function buildQuote(){
 </div>
 <div id="q-result"></div>`;
 }
-function saveForm(){
+async function saveForm(){
   const d={name:document.getElementById('q-name')?.value||'',company:document.getElementById('q-company')?.value||'',service:document.getElementById('q-service')?.value||'',desc:document.getElementById('q-desc')?.value||''};
   try{localStorage.setItem('oa-quote',JSON.stringify(d));}catch(e){}
   if(WEBHOOK_DATABASE_URL&&WEBHOOK_DATABASE_URL.trim()!==''&&(hasText(d.name)||hasText(d.company)||hasText(d.service)||hasText(d.desc))){
-    fetch(WEBHOOK_DATABASE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({type:'quote',...d,timestamp:new Date().toISOString()})}).catch(()=>{});
+    const res = await fetch(WEBHOOK_IA_URL, {
+  method: 'POST',
+  headers: {'Content-Type':'application/json'},
+  body: JSON.stringify({
+    action: 'chat',
+    message: msg,
+    lang: LANG,
+    timestamp: new Date().toISOString()
+  }),
+  signal: makeTimeoutSignal(12000)
+});
   }
   const as=document.getElementById('q-autosave');if(as)as.textContent=t('quoteSaved');
   if(d.name)printToDockerLog('Processing new incoming request from '+d.name+'...');
