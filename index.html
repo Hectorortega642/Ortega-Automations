@@ -1,3 +1,4 @@
+@@ -1,1248 +1,1268 @@
 <!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
@@ -651,6 +652,12 @@ loadReviews();
 const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','support','reviews'];
 function openWin(id){
   currentWin=id;
+  const builders={profile:buildProfile,make:buildMake,docker:buildDocker,agents:buildAgents,
+    dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,
+    support:buildSupport,reviews:buildReviews};
+  const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
+    dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),
+    support:t('tSupport'),reviews:t('tReviews')};
   const builders={
   profile:buildProfile,
   make:buildMake,
@@ -1099,25 +1106,6 @@ async function saveForm(){
   const as=document.getElementById('q-autosave');if(as)as.textContent=t('quoteSaved');
   if(d.name)printToDockerLog('Processing new incoming request from '+d.name+'...');
 }
-  
-  fetch(WEBHOOK_DATABASE_URL,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({
-      type:"contact",
-      name:name||"anónimo",
-      phone,
-      email,
-      text,
-      time:new Date().toLocaleString(),
-      source:"OrtegaAutomations.com"
-    })
-  }).then(()=>{
-    if(status)status.textContent="Solicitud enviada correctamente.";
-  }).catch(()=>{
-    if(status)status.textContent="No se pudo enviar. Intenta de nuevo.";
-  });
-}
 function restoreForm(){
   try{
     const d=JSON.parse(localStorage.getItem('oa-quote')||'{}');
@@ -1157,7 +1145,23 @@ function calcQuote(){
   </div>
 </div>`;
 }
+  function sendQuoteToMake(name,service,low,high){
+  if(!WEBHOOK_DATABASE_URL)return;
 
+  fetch(WEBHOOK_DATABASE_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      type:"quote",
+      name:name||"anónimo",
+      company:"",
+      service:service||"",
+      desc:`Presupuesto estimado: $${low}-$${high} USD`,
+      time:new Date().toLocaleString(),
+      source:"OrtegaAutomations.com"
+    })
+  }).catch(err=>console.warn("Quote webhook error",err));
+}
 function proceedPayPal(low,service){
   sendQuoteToMake("",service,low,low);
   window.open(PAYPAL_ME_URL+'/'+low+'/USD?note='+encodeURIComponent(service),'_blank');
