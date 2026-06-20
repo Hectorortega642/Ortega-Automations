@@ -943,7 +943,6 @@ try {
 }
 
 const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
-      const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
       const agN=data.agent||(LANG==='es'?'Agente IA':'AI Agent');
       const lns=reply.split('\n').filter(l=>l.trim());
       if(lns.length===0){pushBubble(chat,'agent',reply,agN);agentRunning=false;if(btn)btn.disabled=false;}
