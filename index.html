@@ -933,7 +933,16 @@ async function sendAgentMsg(){
 });
       hideTyping();
       if(!res.ok)throw new Error('HTTP '+res.status);
-      const data=await res.json();
+      let data;
+const raw = await res.text();
+
+try {
+  data = JSON.parse(raw);
+} catch {
+  data = { response: raw };
+}
+
+const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
       const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
       const agN=data.agent||(LANG==='es'?'Agente IA':'AI Agent');
       const lns=reply.split('\n').filter(l=>l.trim());
