@@ -1157,55 +1157,7 @@ function calcQuote(){
   </div>
 </div>`;
 }
-function buildContact(){
-  return `
-    <h3 style="font-family:'JetBrains Mono',monospace;font-size:14px;margin-bottom:14px;">📞 ${t('tContact')}</h3>
 
-    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px;">
-      <input id="c-name" class="form-input" type="text" placeholder="Nombre"/>
-      <input id="c-phone" class="form-input" type="text" placeholder="Teléfono"/>
-      <input id="c-email" class="form-input" type="email" placeholder="Email"/>
-      <textarea id="c-text" class="form-input" rows="4" placeholder="Mensaje"></textarea>
-    </div>
-
-    <button class="btn btn-g" onclick="sendContact()">
-      Enviar solicitud →
-    </button>
-
-    <div id="c-status" style="font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--g);margin-top:12px;"></div>
-  `;
-}
-
-function sendContact(){
-  const name=document.getElementById('c-name')?.value.trim()||"";
-  const phone=document.getElementById('c-phone')?.value.trim()||"";
-  const email=document.getElementById('c-email')?.value.trim()||"";
-  const text=document.getElementById('c-text')?.value.trim()||"";
-  const status=document.getElementById('c-status');
-
-  if(!text){
-    if(status)status.textContent="Escribe un mensaje primero.";
-    return;
-  }
-
-
-function sendQuoteToMake(name,service,low,high){
-  if(!WEBHOOK_DATABASE_URL)return;
-
-  fetch(WEBHOOK_DATABASE_URL,{
-    method:"POST",
-    headers:{"Content-Type":"application/json"},
-    body:JSON.stringify({
-      type:"quote",
-      name:name||"anónimo",
-      company:"",
-      service:service||"",
-      desc:`Presupuesto estimado: $${low}-$${high} USD`,
-      time:new Date().toLocaleString(),
-      source:"OrtegaAutomations.com"
-    })
-  }).catch(err=>console.warn("Quote webhook error",err));
-}
 function proceedPayPal(low,service){
   sendQuoteToMake("",service,low,low);
   window.open(PAYPAL_ME_URL+'/'+low+'/USD?note='+encodeURIComponent(service),'_blank');
