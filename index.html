@@ -937,12 +937,17 @@ async function sendAgentMsg(){
 const raw = await res.text();
 
 try {
-  data = JSON.parse(raw);
+    data = JSON.parse(raw);
 } catch {
-  data = { response: raw };
+    data = { response: raw };
 }
 
-const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
+const reply =
+    data.response ||
+    data.message ||
+    data.text ||
+    data.reply ||
+    JSON.stringify(data);
       const agN=data.agent||(LANG==='es'?'Agente IA':'AI Agent');
       const lns=reply.split('\n').filter(l=>l.trim());
       if(lns.length===0){pushBubble(chat,'agent',reply,agN);agentRunning=false;if(btn)btn.disabled=false;}
