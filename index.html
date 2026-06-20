@@ -651,12 +651,32 @@ loadReviews();
 const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','support','reviews'];
 function openWin(id){
   currentWin=id;
-  const builders={profile:buildProfile,make:buildMake,docker:buildDocker,agents:buildAgents,
-    dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,
-    support:buildSupport,reviews:buildReviews};
-  const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
-    dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),
-    support:t('tSupport'),reviews:t('tReviews')};
+  const builders={
+  profile:buildProfile,
+  make:buildMake,
+  docker:buildDocker,
+  agents:buildAgents,
+  dev:buildDev,
+  writing:buildWriting,
+  office:buildOffice,
+  quote:buildQuote,
+  contact:buildContact,
+  support:buildSupport,
+  reviews:buildReviews
+};
+  const titles={
+  profile:t('tProfile'),
+  make:t('tMake'),
+  docker:t('tDocker'),
+  agents:t('tAgents'),
+  dev:t('tDev'),
+  writing:t('tWriting'),
+  office:t('tOffice'),
+  quote:t('tQuote'),
+  contact:t('tContact'),  
+  support:t('tSupport'),
+  reviews:t('tReviews')
+};
   document.getElementById('modal-title').textContent=titles[id]||'—';
   document.getElementById('modal-body').innerHTML=builders[id]?builders[id]():'';
   const ov=document.getElementById('modal-overlay'),win=document.getElementById('modal-win');
