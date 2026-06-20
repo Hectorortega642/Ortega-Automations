@@ -1118,8 +1118,29 @@ function calcQuote(){
   </div>
 </div>`;
 }
-function proceedPayPal(low,service){window.open(PAYPAL_ME_URL+'/'+low+'/USD?note='+encodeURIComponent(service),'_blank');}
+  function sendQuoteToMake(name,service,low,high){
+  if(!WEBHOOK_DATABASE_URL)return;
+
+  fetch(WEBHOOK_DATABASE_URL,{
+    method:"POST",
+    headers:{"Content-Type":"application/json"},
+    body:JSON.stringify({
+      type:"quote",
+      name:name||"anónimo",
+      company:"",
+      service:service||"",
+      desc:`Presupuesto estimado: $${low}-$${high} USD`,
+      time:new Date().toLocaleString(),
+      source:"OrtegaAutomations.com"
+    })
+  }).catch(err=>console.warn("Quote webhook error",err));
+}
+function proceedPayPal(low,service){
+  sendQuoteToMake("",service,low,low);
+  window.open(PAYPAL_ME_URL+'/'+low+'/USD?note='+encodeURIComponent(service),'_blank');
+}
 function sendWhatsApp(name,service,low,high){
+  sendQuoteToMake(name,service,low,high);
   const msg=LANG==='es'
     ?`Hola Héctor 👋\n\nMe interesa el servicio: *${service||'consultoría'}*\n${name?'Mi nombre es *'+name+'*.\n':''}Presupuesto estimado: *$${low}–$${high} USD*\n\nMe gustaría hablar sobre los detalles del proyecto. ¿Cuándo podríamos conectar?\n\n_(Mensaje desde Ortega Automations OS)_`
     :`Hello Héctor 👋\n\nI'm interested in: *${service||'your services'}*\n${name?'My name is *'+name+'*.\n':''}Estimated budget: *$${low}–$${high} USD*\n\nI'd love to discuss the project details. When can we connect?\n\n_(Message from Ortega Automations OS)_`;
