@@ -238,6 +238,7 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
       <div class="app-card ac-y"  onclick="pc();openWin('writing')"><div class="app-icon">✍️</div><div class="app-label" id="lbl-writing">Writing</div><div class="app-sub">Editorial</div></div>
       <div class="app-card ac-r"  onclick="pc();openWin('office')"><div class="app-icon">📋</div><div class="app-label" id="lbl-office">Office</div><div class="app-sub">Admin &amp; Data</div></div>
       <div class="app-card ac-pk" onclick="pc();openWin('quote')"><div class="app-icon">💼</div><div class="app-label" id="lbl-quote">Quote</div><div class="app-sub">Request &amp; Pay</div></div>
+      <div class="app-card ac-c" onclick="pc();openWin('contact')"><div class="app-icon">📨</div><div class="app-label" id="lbl-contact">Contact</div><div class="app-sub">Message</div></div>
     </div>
   </div>
   <div id="dock">
@@ -248,6 +249,7 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
     <div class="dbtn" id="dk-support" onclick="openWin('support')">🔧 <span id="dk-stxt">Support</span></div>
     <div class="dbtn" id="dk-reviews" onclick="openWin('reviews')">⭐ <span id="dk-rtxt">Reviews</span></div>
     <div class="dbtn" id="dk-quote"   onclick="openWin('quote')">💼 <span id="dk-qtxt">Quote</span></div>
+    <div class="dbtn" id="dk-contact" onclick="openWin('contact')">📨 <span id="dk-ctxt">Contact</span></div>
     <a class="dbtn" href="https://github.com/Hectorortega642" target="_blank" rel="noopener">⌨ GitHub</a>
   </div>
 </div>
@@ -412,6 +414,10 @@ en:{
   quoteName:'Your Name',quoteCompany:'Company (optional)',quoteService:'Service Type',quoteDesc:'Project Description',
   quotePrivacy:'🔒 Your data is kept private and processed only to prepare your quote. We never sell or share your information.',
   quoteBtn:'Calculate My Quote →',quoteReset:'↺ Start Over',quotePayPal:'💳 PayPal',quoteWA:'💬 WhatsApp',quoteSaved:'✓ Auto-saved locally',
+  lContact:'Contact',dkContact:'Contact',tContact:'📨 Contact Ortega Automations',
+  contactDesc:'Send a direct message. This saves to the Contacts sheet and can also open WhatsApp.',
+  contactName:'Your Name',contactPhone:'Phone',contactEmail:'Email',contactText:'Message',contactPH:'Tell me what you need...',
+  contactSubmit:'Send Contact →',contactWA:'Open WhatsApp',contactThankYou:'✓ Contact saved.',
   supportDesc:'Describe any tech problem — software, configuration, network, office tools. I will walk you through a diagnosis step by step.',
   supportPH:'e.g. My printer stopped working after a Windows update...',
   supportSend:'Send →',supportClear:'✕ Clear',
@@ -619,8 +625,8 @@ function setLang(l){
   const u=(id,k)=>{const e=document.getElementById(id);if(e)e.textContent=t(k);};
   u('tb-status','status');u('hero-sub','heroSub');
   u('lbl-profile','lProfile');u('lbl-make','lMake');u('lbl-docker','lDocker');u('lbl-agents','lAgents');
-  u('lbl-dev','lDev');u('lbl-writing','lWriting');u('lbl-office','lOffice');u('lbl-quote','lQuote');
-  u('dk-ptxt','dkP');u('dk-atxt','dkA');u('dk-stxt','dkS');u('dk-rtxt','dkR');u('dk-qtxt','dkQ');
+  u('lbl-dev','lDev');u('lbl-writing','lWriting');u('lbl-office','lOffice');u('lbl-quote','lQuote');u('lbl-contact','lContact');
+  u('dk-ptxt','dkP');u('dk-atxt','dkA');u('dk-stxt','dkS');u('dk-rtxt','dkR');u('dk-qtxt','dkQ');u('dk-ctxt','dkContact');
   if(currentWin){const w=currentWin;closeWin();setTimeout(()=>openWin(w),320);}
 }
 
@@ -650,14 +656,14 @@ function saveReviews(){try{localStorage.setItem('oa-reviews',JSON.stringify(revi
 loadReviews();
 
 /* ══ MODAL ENGINE ══ */
-const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','support','reviews'];
+const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','contact','support','reviews'];
 function openWin(id){
   currentWin=id;
   const builders={profile:buildProfile,make:buildMake,docker:buildDocker,agents:buildAgents,
-    dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,
+    dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,contact:buildContact,
     support:buildSupport,reviews:buildReviews};
   const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
-    dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),
+    dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),contact:t('tContact'),
     support:t('tSupport'),reviews:t('tReviews')};
   document.getElementById('modal-title').textContent=titles[id]||'—';
   document.getElementById('modal-body').innerHTML=builders[id]?builders[id]():'';
@@ -1147,6 +1153,47 @@ function sendWhatsApp(name,service,low,high){
     ?`Hola Héctor 👋\n\nMe interesa el servicio: *${service||'consultoría'}*\n${name?'Mi nombre es *'+name+'*.\n':''}Presupuesto estimado: *$${low}–$${high} USD*\n\nMe gustaría hablar sobre los detalles del proyecto. ¿Cuándo podríamos conectar?\n\n_(Mensaje desde Ortega Automations OS)_`
     :`Hello Héctor 👋\n\nI'm interested in: *${service||'your services'}*\n${name?'My name is *'+name+'*.\n':''}Estimated budget: *$${low}–$${high} USD*\n\nI'd love to discuss the project details. When can we connect?\n\n_(Message from Ortega Automations OS)_`;
   window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+}
+
+
+/* ══ WINDOW 9 — CONTACT ══ */
+function buildContact(){
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:14px;">${t('contactDesc')}</p>
+<div style="display:flex;flex-direction:column;gap:10px;margin-bottom:12px;">
+  <input id="c-name" class="form-input" type="text" placeholder="${t('contactName')}"/>
+  <input id="c-phone" class="form-input" type="tel" placeholder="${t('contactPhone')}"/>
+  <input id="c-email" class="form-input" type="email" placeholder="${t('contactEmail')}"/>
+  <textarea id="c-text" class="form-input" rows="4" placeholder="${t('contactPH')}"></textarea>
+</div>
+<div style="display:flex;gap:10px;flex-wrap:wrap;">
+  <button class="btn btn-g" onclick="submitContact(false)">${t('contactSubmit')}</button>
+  <button class="btn btn-c" onclick="submitContact(true)">💬 ${t('contactWA')}</button>
+</div>
+<div id="contact-result" style="margin-top:12px;"></div>`;
+}
+async function submitContact(openWa){
+  const name=document.getElementById('c-name')?.value.trim()||'anónimo';
+  const phone=document.getElementById('c-phone')?.value.trim()||'';
+  const email=document.getElementById('c-email')?.value.trim()||'';
+  const text=document.getElementById('c-text')?.value.trim()||'';
+  if(!text){document.getElementById('contact-result').innerHTML='<span class="badge ba">Escribe un mensaje primero</span>';return;}
+  const payload={type:'contact',name,phone,email,text,time:new Date().toLocaleString(),source:'OrtegaAutomations.com'};
+  try{
+    if(WEBHOOK_DATABASE_URL){
+      await fetch(WEBHOOK_DATABASE_URL,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:makeTimeoutSignal(5000)});
+    }
+    document.getElementById('contact-result').innerHTML='<span class="badge bg">'+t('contactThankYou')+'</span>';
+  }catch(err){
+    console.warn('Contact webhook error',err);
+    document.getElementById('contact-result').innerHTML='<span class="badge ba">Guardado local falló o Make no respondió</span>';
+  }
+  if(openWa){
+    const msg=LANG==='es'
+      ?`Hola Héctor, soy ${name}.\nTel: ${phone}\nEmail: ${email}\n\n${text}`
+      :`Hello Hector, this is ${name}.\nPhone: ${phone}\nEmail: ${email}\n\n${text}`;
+    window.open('https://wa.me/'+WHATSAPP_NUMBER+'?text='+encodeURIComponent(msg),'_blank');
+  }
 }
 
 /* ══ WINDOW 9 — IT SUPPORT ══ */
