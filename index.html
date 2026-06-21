@@ -1,4 +1,3 @@
-@@ -1,1248 +1,1268 @@
 <!DOCTYPE html>
 <html lang="en" id="html-root">
 <head>
@@ -238,7 +237,7 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
       <div class="app-card ac-ok" onclick="pc();openWin('dev')"><div class="app-icon">🛠️</div><div class="app-label" id="lbl-dev">Dev &amp; Build</div><div class="app-sub">Code &amp; Godot</div></div>
       <div class="app-card ac-y"  onclick="pc();openWin('writing')"><div class="app-icon">✍️</div><div class="app-label" id="lbl-writing">Writing</div><div class="app-sub">Editorial</div></div>
       <div class="app-card ac-r"  onclick="pc();openWin('office')"><div class="app-icon">📋</div><div class="app-label" id="lbl-office">Office</div><div class="app-sub">Admin &amp; Data</div></div>
-      <div class="app-card ac-c" onclick="pc();openWin('contact')"><div class="app-icon">📞</div><div class="app-label" id="lbl-contact">Contact</div><div class="app-sub" id="sub-contact">Leads & Projects</div></div>
+      <div class="app-card ac-pk" onclick="pc();openWin('quote')"><div class="app-icon">💼</div><div class="app-label" id="lbl-quote">Quote</div><div class="app-sub">Request &amp; Pay</div></div>
     </div>
   </div>
   <div id="dock">
@@ -248,7 +247,7 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
     <div class="dbtn" id="dk-agents"  onclick="openWin('agents')">🧠 <span id="dk-atxt">Agents</span></div>
     <div class="dbtn" id="dk-support" onclick="openWin('support')">🔧 <span id="dk-stxt">Support</span></div>
     <div class="dbtn" id="dk-reviews" onclick="openWin('reviews')">⭐ <span id="dk-rtxt">Reviews</span></div>
-    <div class="dbtn" id="dk-contact" onclick="openWin('contact')">📞 <span id="dk-ctxt">Contact</span></div>
+    <div class="dbtn" id="dk-quote"   onclick="openWin('quote')">💼 <span id="dk-qtxt">Quote</span></div>
     <a class="dbtn" href="https://github.com/Hectorortega642" target="_blank" rel="noopener">⌨ GitHub</a>
   </div>
 </div>
@@ -435,6 +434,8 @@ en:{
 es:{
   status:'Disponible',heroSub:'IA · Automatización · Dev — Las Vegas, NV · Toca un módulo',
   lProfile:'Perfil',lMake:'Make.com',lDocker:'Docker',lAgents:'Agentes IA',
+  lDev:'Dev & Código',lWriting:'Redacción',lOffice:'Oficina',lQuote:'Cotizar',
+  dkP:'Perfil',dkA:'Agentes',dkS:'Soporte',dkR:'Reseñas',dkQ:'Cotizar',
   lDev:'Dev & Código',lWriting:'Redacción',lOffice:'Oficina',lQuote:'Cotizar',lContact:'Contactar',
   dkP:'Perfil',dkA:'Agentes',dkS:'Soporte',dkR:'Reseñas',dkQ:'Cotizar',dkContact:'Contactar',
   wcTitle:'Bienvenido a Ortega Automations',
@@ -658,32 +659,6 @@ function openWin(id){
   const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
     dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),
     support:t('tSupport'),reviews:t('tReviews')};
-  const builders={
-  profile:buildProfile,
-  make:buildMake,
-  docker:buildDocker,
-  agents:buildAgents,
-  dev:buildDev,
-  writing:buildWriting,
-  office:buildOffice,
-  quote:buildQuote,
-  contact:buildContact,
-  support:buildSupport,
-  reviews:buildReviews
-};
-  const titles={
-  profile:t('tProfile'),
-  make:t('tMake'),
-  docker:t('tDocker'),
-  agents:t('tAgents'),
-  dev:t('tDev'),
-  writing:t('tWriting'),
-  office:t('tOffice'),
-  quote:t('tQuote'),
-  contact:t('tContact'),  
-  support:t('tSupport'),
-  reviews:t('tReviews')
-};
   document.getElementById('modal-title').textContent=titles[id]||'—';
   document.getElementById('modal-body').innerHTML=builders[id]?builders[id]():'';
   const ov=document.getElementById('modal-overlay'),win=document.getElementById('modal-win');
