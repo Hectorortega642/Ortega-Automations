@@ -139,6 +139,15 @@ margin-right:auto;
 .ac-pk::after{background:radial-gradient(circle at 50% -10%,rgba(236,72,153,.16),transparent 65%);}
 .ac-pk:hover,.ac-pk:active{border-color:rgba(236,72,153,.5);box-shadow:0 0 24px rgba(236,72,153,.12);}
 .ac-pk:hover::after,.ac-pk:active::after{opacity:1;}
+   .featured-card{
+border:1px solid rgba(0,200,150,.45);
+box-shadow:0 0 25px rgba(0,200,150,.12);
+transform:scale(1.03);
+}
+
+.featured-card:hover{
+transform:scale(1.06);
+}
 #dock{flex-shrink:0;height:52px;background:rgba(9,13,12,.94);border-top:1px solid var(--bdr);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);display:flex;align-items:center;justify-content:center;gap:5px;padding:0 10px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;}
 #dock::-webkit-scrollbar{display:none;}
 .dbtn{display:flex;align-items:center;gap:4px;padding:6px 10px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;white-space:nowrap;flex-shrink:0;border:1px solid var(--bdr);background:var(--bg3);color:var(--t2);transition:all .15s;text-decoration:none;}
