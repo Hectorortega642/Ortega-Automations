@@ -46,7 +46,25 @@ html,body{height:100%;width:100%;overflow:hidden;background:var(--bg0);color:var
 #bg-canvas{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.22;}
 #os{position:relative;z-index:1;height:100dvh;display:flex;flex-direction:column;overflow:hidden;}
 #topbar{flex-shrink:0;height:50px;background:rgba(9,13,12,.97);border-bottom:1px solid var(--bdr);backdrop-filter:blur(24px);-webkit-backdrop-filter:blur(24px);display:flex;align-items:center;padding:0 12px;gap:7px;position:relative;z-index:200;}
-.tb-brand{font-family:'JetBrains Mono',monospace;font-size:13px;font-weight:700;color:var(--g);text-shadow:0 0 14px rgba(0,200,150,.5);white-space:nowrap;flex-shrink:0;cursor:pointer;}
+.brand-block{
+cursor:pointer;
+display:flex;
+flex-direction:column;
+line-height:1.1;
+}
+
+.brand-title{
+font-family:'JetBrains Mono',monospace;
+font-size:13px;
+font-weight:700;
+color:var(--g);
+letter-spacing:.5px;
+}
+
+.brand-sub{
+font-size:10px;
+color:var(--t2);
+}
 .tb-spacer{flex:1;}
 .tb-item{display:flex;align-items:center;gap:5px;padding:4px 9px;border-radius:8px;font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;border:1px solid var(--bdr);background:var(--bg3);color:var(--t2);transition:all .18s;white-space:nowrap;text-decoration:none;flex-shrink:0;}
 .tb-item:hover{color:var(--t1);border-color:rgba(0,200,150,.35);}
