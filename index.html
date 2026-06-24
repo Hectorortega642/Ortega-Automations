@@ -1,24 +1,95 @@
 <html lang="en" id="html-root">
 <head>
-   <link rel="icon" href="favicon.ico">
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width,initial-scale=1.0,viewport-fit=cover"/>
-<title>Ortega Automations — AI · Automation · Dev</title>
-<meta name="description" content="Hector Benitez Ortega — AI Automation Engineer. Autonomous AI pipelines, Make.com automation, Docker deployments and bilingual web apps. Las Vegas, NV."/>
-<meta property="og:title" content="Ortega Automations — AI · Automation · Dev"/>
-<meta property="og:description" content="Autonomous AI pipelines, Make.com automation, Docker systems and bilingual web apps. Hector Benitez Ortega — Las Vegas, NV."/>
-<meta property="og:image" content="https://Hectorortega642.github.io/og-image.png"/>
-<meta property="og:url" content="https://Hectorortega642.github.io"/>
+
+<!-- ═══ SEO PRIMARY ═══ -->
+<title>Ortega Automations — AI Automation Engineer · Make.com · AI Agents · Las Vegas</title>
+<meta name="description" content="Hector Benitez Ortega — AI Automation Engineer in Las Vegas. I build Make.com pipelines, autonomous AI agents, Docker systems and bilingual web apps that eliminate manual work. Open to work."/>
+<meta name="keywords" content="AI automation, Make.com automation, AI agents, workflow automation, business automation, Docker, Python, CrewAI, OpenAI, bilingual automation, Las Vegas automation engineer"/>
+<meta name="author" content="Hector Ezequiel Benitez Ortega"/>
+<meta name="robots" content="index, follow"/>
+<link rel="canonical" href="https://hectorortega642.github.io/"/>
+
+<!-- ═══ OPEN GRAPH ═══ -->
 <meta property="og:type" content="website"/>
+<meta property="og:site_name" content="Ortega Automations"/>
+<meta property="og:title" content="Ortega Automations — AI Automation Engineer"/>
+<meta property="og:description" content="Make.com pipelines, autonomous AI agents and Docker systems that eliminate manual work. Based in Las Vegas, NV. Bilingual EN/ES."/>
+<meta property="og:image" content="https://hectorortega642.github.io/og-image.png"/>
+<meta property="og:image:width" content="1200"/>
+<meta property="og:image:height" content="630"/>
+<meta property="og:url" content="https://hectorortega642.github.io/"/>
+<meta property="og:locale" content="en_US"/>
+<meta property="og:locale:alternate" content="es_ES"/>
+
+<!-- ═══ TWITTER CARDS ═══ -->
 <meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Ortega Automations — AI Automation Engineer"/>
+<meta name="twitter:description" content="Make.com pipelines, AI agents and Docker systems in Las Vegas. Bilingual EN/ES."/>
+<meta name="twitter:image" content="https://hectorortega642.github.io/og-image.png"/>
+
+<!-- ═══ PWA ═══ -->
 <meta name="theme-color" content="#00C896"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Ortega Automations"/>
 <link rel="manifest" href="./manifest.json"/>
 <link rel="apple-touch-icon" href="./icon-192.png"/>
+
+<!-- ═══ FAVICONS ═══ -->
 <link rel="icon" href="./favicon.ico"/>
 <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16.png"/>
 <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32.png"/>
 <link rel="icon" type="image/png" sizes="48x48" href="./favicon-48.png"/>
+
+<!-- ═══ SCHEMA.ORG JSON-LD ═══ -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Hector Ezequiel Benitez Ortega",
+  "jobTitle": "AI Automation Engineer",
+  "url": "https://hectorortega642.github.io",
+  "sameAs": [
+    "https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296",
+    "https://github.com/Hectorortega642"
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Las Vegas",
+    "addressRegion": "NV",
+    "addressCountry": "US"
+  },
+  "knowsLanguage": ["en", "es"],
+  "knowsAbout": ["Make.com", "AI Agents", "Python", "Docker", "Workflow Automation", "Business Automation", "CrewAI", "FastAPI"],
+  "description": "AI Automation Engineer building Make.com pipelines, autonomous AI agents and Docker systems for businesses in Las Vegas and globally.",
+  "brand": {
+    "@type": "Brand",
+    "name": "Ortega Automations"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "Ortega Automations",
+  "url": "https://hectorortega642.github.io",
+  "description": "AI Automation Engineering portfolio — Make.com, AI Agents, Docker, Python, bilingual systems.",
+  "author": {
+    "@type": "Person",
+    "name": "Hector Ezequiel Benitez Ortega"
+  },
+  "inLanguage": ["en", "es"]
+}
+</script>
+
+<!-- ═══ FONTS ═══ -->
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+
 <style>
 .top-logo{
   width:40px;height:40px;border-radius:11px;object-fit:cover;
@@ -266,8 +337,145 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
 .spec-ico{width:34px;height:34px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:17px;flex-shrink:0;background:rgba(0,200,150,.08);border:1px solid rgba(0,200,150,.22);}
 .spec-name{font-size:12px;font-weight:600;color:var(--t1);line-height:1.25;}
 @media(prefers-reduced-motion:reduce){*{animation-duration:.001ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;}.hero-divider::after{animation:none;}}
+/* ═══════════════════════════════════════════════
+   EVOLUTION ADDITIONS — appended to existing styles
+   Does NOT override existing rules, only adds new ones
+═══════════════════════════════════════════════ */
+
+/* ── FLOATING AI ASSISTANT BUTTON ── */
+#ai-fab{
+  position:fixed;bottom:72px;right:60px;z-index:145;
+  width:46px;height:46px;border-radius:14px;
+  background:linear-gradient(135deg,rgba(0,200,150,.18),rgba(6,182,212,.14));
+  border:1px solid rgba(0,200,150,.42);
+  display:flex;align-items:center;justify-content:center;
+  font-size:20px;cursor:pointer;
+  box-shadow:0 0 20px rgba(0,200,150,.22),0 4px 16px rgba(0,0,0,.4);
+  transition:all .22s cubic-bezier(.22,1,.36,1);
+  animation:fabIn .5s .8s cubic-bezier(.22,1,.36,1) both;
+}
+@keyframes fabIn{from{opacity:0;transform:scale(.6) translateY(10px);}to{opacity:1;transform:scale(1) translateY(0);}}
+#ai-fab:hover{transform:scale(1.08) translateY(-2px);box-shadow:0 0 32px rgba(0,200,150,.38),0 8px 24px rgba(0,0,0,.4);}
+#ai-fab .fab-ring{position:absolute;inset:-4px;border-radius:18px;border:1px solid rgba(0,200,150,.22);animation:ring-pulse 2.8s ease infinite;}
+@keyframes ring-pulse{0%,100%{opacity:.5;transform:scale(1);}50%{opacity:.1;transform:scale(1.12);}}
+#ai-fab .fab-badge{position:absolute;top:-4px;right:-4px;width:10px;height:10px;border-radius:50%;background:var(--g);border:2px solid var(--bg0);animation:pdot 2s ease infinite;}
+
+/* ── FLOATING AI PANEL ── */
+#ai-panel{
+  position:fixed;bottom:128px;right:14px;z-index:146;
+  width:min(340px,calc(100vw - 28px));
+  background:var(--bg1);border:1px solid var(--bdr);
+  border-radius:16px;overflow:hidden;
+  box-shadow:0 20px 60px rgba(0,0,0,.6),0 0 0 1px rgba(0,200,150,.08);
+  transform:scale(.88) translateY(16px) translateX(8px);transform-origin:bottom right;
+  opacity:0;pointer-events:none;
+  transition:transform .28s cubic-bezier(.22,1,.36,1),opacity .22s ease;
+}
+#ai-panel.open{transform:scale(1) translateY(0) translateX(0);opacity:1;pointer-events:all;}
+#ai-panel-bar{
+  display:flex;align-items:center;gap:8px;padding:11px 14px;
+  background:var(--bg2);border-bottom:1px solid var(--bdr);
+}
+#ai-panel-bar .panel-ico{font-size:16px;}
+#ai-panel-bar .panel-title{font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--g);flex:1;font-weight:600;}
+#ai-panel-bar .panel-close{width:24px;height:24px;border-radius:6px;display:flex;align-items:center;justify-content:center;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);color:var(--r);font-size:14px;cursor:pointer;transition:all .15s;flex-shrink:0;}
+#ai-panel-bar .panel-close:hover{background:rgba(239,68,68,.18);}
+#ai-chat-box{height:200px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:7px;-webkit-overflow-scrolling:touch;overscroll-behavior:contain;scrollbar-width:none;}
+#ai-chat-box::-webkit-scrollbar{display:none;}
+#ai-input-area{display:flex;gap:8px;padding:10px 12px;border-top:1px solid var(--bdr);}
+#ai-input{flex:1;background:var(--bg3);border:1px solid var(--bdr);border-radius:8px;padding:8px 11px;color:var(--t1);font-family:'JetBrains Mono',monospace;font-size:11px;outline:none;transition:border-color .2s;resize:none;line-height:1.4;}
+#ai-input:focus{border-color:rgba(0,200,150,.45);}
+#ai-input::placeholder{color:var(--t3);}
+#ai-send{padding:7px 12px;background:rgba(0,200,150,.12);border:1px solid rgba(0,200,150,.32);border-radius:8px;color:var(--g);font-family:'JetBrains Mono',monospace;font-size:11px;cursor:pointer;transition:all .15s;white-space:nowrap;flex-shrink:0;}
+#ai-send:hover{background:rgba(0,200,150,.22);}
+.ai-quick-btns{display:flex;gap:5px;padding:0 12px 10px;flex-wrap:wrap;}
+.ai-quick{padding:4px 9px;background:var(--bg3);border:1px solid var(--bdr);border-radius:20px;color:var(--t2);font-family:'JetBrains Mono',monospace;font-size:10px;cursor:pointer;transition:all .15s;white-space:nowrap;}
+.ai-quick:hover{color:var(--g);border-color:rgba(0,200,150,.35);}
+.ai-powered{display:flex;align-items:center;justify-content:center;gap:4px;padding:6px;border-top:1px solid var(--bdr);font-family:'JetBrains Mono',monospace;font-size:9px;color:var(--t3);}
+
+/* ── VOICE INPUT BUTTON ── */
+#voice-btn{
+  display:flex;align-items:center;gap:5px;
+  padding:5px 10px;border-radius:8px;
+  background:transparent;border:1px solid var(--bdr);
+  color:var(--t2);font-family:'JetBrains Mono',monospace;font-size:10px;
+  cursor:pointer;transition:all .18s;flex-shrink:0;
+  white-space:nowrap;
+}
+#voice-btn:hover{color:var(--t1);border-color:rgba(0,200,150,.35);}
+#voice-btn.listening{color:var(--r);border-color:rgba(239,68,68,.4);background:rgba(239,68,68,.07);animation:voice-pulse 1s ease infinite;}
+@keyframes voice-pulse{0%,100%{box-shadow:0 0 0 0 rgba(239,68,68,.3);}50%{box-shadow:0 0 0 5px rgba(239,68,68,.0);}}
+#voice-btn.no-support{opacity:.35;cursor:not-allowed;}
+
+/* ── PROJECTS SECTION IN MODAL ── */
+.proj-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px;margin-bottom:16px;}
+.proj-card{background:var(--bg3);border:1px solid var(--bdr);border-radius:12px;padding:14px;transition:border-color .22s,transform .22s,box-shadow .22s;position:relative;overflow:hidden;}
+.proj-card::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;background:var(--g);opacity:0;transition:opacity .2s;}
+.proj-card:hover{border-color:rgba(0,200,150,.28);transform:translateY(-2px);box-shadow:0 8px 24px rgba(0,0,0,.3);}
+.proj-card:hover::before{opacity:1;}
+.proj-card-ico{font-size:22px;margin-bottom:8px;}
+.proj-card-title{font-size:13px;font-weight:600;color:var(--t1);margin-bottom:4px;line-height:1.3;}
+.proj-card-desc{font-size:11px;color:var(--t2);line-height:1.65;margin-bottom:10px;}
+.proj-card-tags{display:flex;flex-wrap:wrap;gap:4px;}
+.proj-card-tag{font-family:'JetBrains Mono',monospace;font-size:9px;padding:2px 6px;border-radius:4px;background:var(--bg2);border:1px solid var(--bdr);color:var(--t3);}
+.proj-card-tag.tg{border-color:rgba(0,200,150,.2);color:var(--g);background:rgba(0,200,150,.06);}
+.proj-card-tag.ta{border-color:rgba(245,158,11,.2);color:var(--a);background:rgba(245,158,11,.06);}
+.proj-card-tag.tp{border-color:rgba(139,92,246,.2);color:var(--p);background:rgba(139,92,246,.06);}
+.proj-card-tag.tc{border-color:rgba(6,182,212,.2);color:var(--c);background:rgba(6,182,212,.06);}
+
+/* ── AGENT PILL FIX ── */
+.agent-pill{transition:all .15s;}
+.agent-pill:hover{border-color:rgba(0,200,150,.35)!important;color:var(--t1)!important;}
+.agent-pill.active{border-color:var(--g)!important;background:rgba(0,200,150,.12)!important;}
+
+/* ── TOPBAR IMPROVEMENTS ── */
+#topbar .dot{width:5px;height:5px;}
+.tb-item-voice{gap:5px;}
+
+/* ── FOOTER SIGNATURE ── */
+#site-footer{
+  position:fixed;bottom:52px;left:0;right:0;
+  display:flex;align-items:center;justify-content:center;
+  pointer-events:none;z-index:90;
+}
+#site-footer .footer-credit{
+  font-family:'JetBrains Mono',monospace;font-size:9px;
+  color:var(--t3);letter-spacing:.6px;
+  padding:2px 10px;
+  border-radius:20px;
+  border:1px solid rgba(255,255,255,.04);
+  background:rgba(9,13,12,.6);
+  backdrop-filter:blur(8px);
+  pointer-events:auto;
+  transition:color .2s;
+}
+#site-footer .footer-credit a{color:inherit;text-decoration:none;transition:color .2s;}
+#site-footer .footer-credit:hover a{color:var(--g);}
+
+/* ── SKIP TO MAIN (ACCESSIBILITY) ── */
+#skip-main{
+  position:fixed;top:-100px;left:16px;z-index:9999;
+  background:var(--g);color:#000;font-family:'JetBrains Mono',monospace;font-size:12px;
+  padding:8px 14px;border-radius:8px;text-decoration:none;font-weight:700;
+  transition:top .2s;
+}
+#skip-main:focus{top:8px;}
+
+/* ── IMPROVED TOPBAR STATUS PILL ── */
+.tb-item{transition:color .18s,border-color .18s,background .18s;}
+.tb-item[role="status"]{cursor:default;}
+
+/* ── APP CARD ARIA IMPROVEMENTS ── */
+.app-card:focus-visible{outline:2px solid var(--g);outline-offset:2px;}
+.dbtn:focus-visible{outline:2px solid var(--g);outline-offset:2px;}
+.btn:focus-visible{outline:2px solid var(--g);outline-offset:2px;}
+
+/* ── MODAL ACCESSIBILITY ── */
+.modal-win:focus{outline:none;}
+
 </style>
 </head>
+<a id="skip-main" href="#desktop" tabindex="1">Skip to main content</a>
 <body>
 <canvas id="bg-canvas"></canvas>
 <div id="bg-glow"></div>
@@ -297,6 +505,9 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
     <div class="tb-item"><div class="pdot"></div><span id="tb-status">Open to Work</span></div>
     <span id="clock">--:--</span>
     <span id="vol-btn" title="Toggle UI sounds" onclick="toggleSound()">🔇</span>
+    <button id="voice-btn" class="tb-item tb-item-voice" onclick="toggleVoice()" title="Voice input" aria-label="Toggle voice input" aria-pressed="false">
+      🎤
+    </button>
     <div id="lang-toggle">
       <button class="lbtn active" id="btn-en" onclick="setLang('en')">EN</button>
       <button class="lbtn" id="btn-es" onclick="setLang('es')">ES</button>
@@ -314,20 +525,20 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
       </div>
     </div>
 
-<div id="app-grid">
-      <div class="app-card ac-g"  onclick="pc();openWin('profile')"><div class="app-icon">👤</div><div class="app-label" id="lbl-profile">Profile</div><div class="app-sub" id="sub-profile">Experience</div></div>
-      <div class="app-card ac-a"  onclick="pc();openWin('make')"><div class="app-icon">⚡</div><div class="app-label" id="lbl-make">Make.com</div><div class="app-sub" id="sub-make">Automation</div></div>
-      <div class="app-card ac-c"  onclick="pc();openWin('docker')"><div class="app-icon">🐳</div><div class="app-label" id="lbl-docker">Docker</div><div class="app-sub" id="sub-docker">Infrastructure</div></div>
-      <div class="app-card ac-p"  onclick="pc();openWin('agents')"><div class="app-icon">🧠</div><div class="app-label" id="lbl-agents">AI Agents</div><div class="app-sub" id="sub-agents">Specialized Agents</div></div>
-      <div class="app-card ac-ok" onclick="pc();openWin('dev')"><div class="app-icon">🛠️</div><div class="app-label" id="lbl-dev">Dev &amp; Build</div><div class="app-sub" id="sub-dev">Development</div></div>
-      <div class="app-card ac-y"  onclick="pc();openWin('writing')"><div class="app-icon">✍️</div><div class="app-label" id="lbl-writing">Writing</div><div class="app-sub" id="sub-writing">Content</div></div>
-      <div class="app-card ac-r"  onclick="pc();openWin('office')"><div class="app-icon">📋</div><div class="app-label" id="lbl-office">Office</div><div class="app-sub" id="sub-office">Operations</div></div>
+<main id="desktop-grid"><div id="app-grid" role="list" aria-label="Services navigation">
+      <div class="app-card ac-g" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('profile')"><div class="app-icon">👤</div><div class="app-label" id="lbl-profile">Profile</div><div class="app-sub" id="sub-profile">Experience</div></div>
+      <div class="app-card ac-a" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('make')"><div class="app-icon">⚡</div><div class="app-label" id="lbl-make">Make.com</div><div class="app-sub" id="sub-make">Automation</div></div>
+      <div class="app-card ac-c" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('docker')"><div class="app-icon">🐳</div><div class="app-label" id="lbl-docker">Docker</div><div class="app-sub" id="sub-docker">Infrastructure</div></div>
+      <div class="app-card ac-p" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('agents')"><div class="app-icon">🧠</div><div class="app-label" id="lbl-agents">AI Agents</div><div class="app-sub" id="sub-agents">Specialized Agents</div></div>
+      <div class="app-card ac-ok" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('dev')"><div class="app-icon">🛠️</div><div class="app-label" id="lbl-dev">Dev &amp; Build</div><div class="app-sub" id="sub-dev">Development</div></div>
+      <div class="app-card ac-y" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('writing')"><div class="app-icon">✍️</div><div class="app-label" id="lbl-writing">Writing</div><div class="app-sub" id="sub-writing">Content</div></div>
+      <div class="app-card ac-r" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('office')"><div class="app-icon">📋</div><div class="app-label" id="lbl-office">Office</div><div class="app-sub" id="sub-office">Operations</div></div>
       <div class="app-card ac-pk featured-card"onclick="pc();openWin('quote')"><div class="app-icon">💼</div><div class="app-label" id="lbl-quote">Quote</div><div class="app-sub" id="sub-quote">Quotation</div></div>
-      <div class="app-card ac-c" onclick="pc();openWin('contact')"><div class="app-icon">📨</div><div class="app-label" id="lbl-contact">Contact</div><div class="app-sub" id="sub-contact">Direct Contact</div></div>
+      <div class="app-card ac-c" role="listitem" tabindex="0" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();pc();" onclick="pc();openWin('contact')"><div class="app-icon">📨</div><div class="app-label" id="lbl-contact">Contact</div><div class="app-sub" id="sub-contact">Direct Contact</div></div>
     </div>
-  </div>
-  <div id="dock">
-    <div class="dbtn" id="dk-profile" onclick="openWin('profile')">👤 <span id="dk-ptxt">Profile</span></div>
+  </div></main>
+  <nav id="dock" aria-label="Quick navigation">
+    <div class="dbtn" id="dk-profile" onclick="openWin('profile')" role="button" tabindex="0" aria-label="Open Profile" onkeydown="if(event.key==='Enter'||event.key===' ')openWin('profile')">👤 <span id="dk-ptxt">Profile</span></div>
     <div class="dbtn" id="dk-make"    onclick="openWin('make')">⚡ Make</div>
     <div class="dbtn" id="dk-docker"  onclick="openWin('docker')">🐳 Docker</div>
     <div class="dbtn" id="dk-agents"  onclick="openWin('agents')">🧠 <span id="dk-atxt">Agents</span></div>
@@ -335,10 +546,39 @@ select.form-input option{background:var(--bg3);color:var(--t1);}
     <div class="dbtn" id="dk-reviews" onclick="openWin('reviews')">⭐ <span id="dk-rtxt">Reviews</span></div>
     <div class="dbtn" id="dk-quote"   onclick="openWin('quote')">💼 <span id="dk-qtxt">Quote</span></div>
     <div class="dbtn" id="dk-contact" onclick="openWin('contact')">📨 <span id="dk-ctxt">Contact</span></div>
+        <div class="dbtn" id="dk-projects" onclick="openWin('projects')">🗂️ <span id="dk-pjtxt">Projects</span></div>
     <a class="dbtn" href="https://github.com/Hectorortega642" target="_blank" rel="noopener">⌨ GitHub</a>
-  </div>
+  </nav>
 </div>
-<a id="li-float" href="https://www.linkedin.com/in/ortegaautomations" target="_blank" rel="noopener" title="LinkedIn">in</a>
+<!-- FOOTER -->
+<div id="site-footer" aria-hidden="true"><span class="footer-credit">Built by <a href="https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296" target="_blank" rel="noopener" aria-label="Hector Ortega LinkedIn">Hector Ortega</a> · Ortega Automations</span></div>
+<a id="li-float" href="https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296" target="_blank" rel="noopener" title="LinkedIn">in</a>
+<!-- FLOATING AI ASSISTANT -->
+<button id="ai-fab" onclick="toggleAiPanel()" aria-label="Open AI Assistant" title="AI Assistant — Ask me anything">
+  <div class="fab-ring"></div>
+  <span class="fab-badge"></span>
+  🤖
+</button>
+<div id="ai-panel" role="dialog" aria-label="AI Assistant" aria-modal="false">
+  <div id="ai-panel-bar">
+    <span class="panel-ico">🤖</span>
+    <span class="panel-title">Ortega AI Assistant</span>
+    <button class="panel-close" onclick="toggleAiPanel()" aria-label="Close assistant">✕</button>
+  </div>
+  <div id="ai-chat-box" aria-live="polite" aria-label="Chat messages"></div>
+  <div class="ai-quick-btns" id="ai-quick-btns">
+    <button class="ai-quick" onclick="aiQuick('services')">Services</button>
+    <button class="ai-quick" onclick="aiQuick('quote')">Get a Quote</button>
+    <button class="ai-quick" onclick="aiQuick('contact')">Contact Hector</button>
+    <button class="ai-quick" onclick="aiQuick('projects')">Projects</button>
+  </div>
+  <div id="ai-input-area">
+    <textarea id="ai-input" rows="1" placeholder="Ask anything…" onkeydown="aiKey(event)" aria-label="Message to AI assistant"></textarea>
+    <button id="ai-send" onclick="sendAiMsg()" aria-label="Send message">Send →</button>
+  </div>
+  <div class="ai-powered">⚡ Powered by Make.com + OpenAI</div>
+</div>
+
 <!-- MODAL -->
 <div id="modal-overlay">
   <div class="modal-win" id="modal-win">
@@ -542,6 +782,17 @@ contactSuccess:'✓ Message sent successfully',
   reviewSharePrompt:'You gave us 5 stars! Help others find us:',
   reviewCopyLink:'📋 Copy Link',reviewShareLI:'Share on LinkedIn',reviewCopied:'✓ Copied!',
   noReviews:'No reviews yet — be the first!',
+  lProjects:'Projects',sProjects:'Case Studies',tProjects:'🗂️ Projects & Case Studies',
+  dkProjects:'Projects',
+  projectsDesc:'Real automation systems and AI workflows built for clients and personal projects. Each one solved a specific business problem.',
+  projects:[
+    {ico:'⚡',title:'NextKey Lead Pipeline',desc:'Full Make.com automation: form → webhook → Google Sheets + Email + WhatsApp in under 600ms. Built for NextKeySolutions LLC.',tags:['Make.com','Webhook','Google Sheets','Email'],tcls:'tg'},
+    {ico:'🧠',title:'Ortega Automations OS',desc:'Autonomous AI agent system: FastAPI orchestrator + CrewAI multi-agent crew + SQLite WAL + Windows voice bridge. Dockerized.',tags:['Python','FastAPI','CrewAI','Docker'],tcls:'tp'},
+    {ico:'🌐',title:'Bilingual Portfolio OS',desc:'This website — OS-style interface with real Make.com integrations, bilingual EN/ES support, AI chat and webhook-driven data sync.',tags:['HTML/CSS/JS','Make.com','GitHub Pages'],tcls:'tc'},
+    {ico:'🐳',title:'Docker Stack Deployment',desc:'Complete containerized stack: FastAPI + SQLite WAL + voice bridge daemon. Single docker compose up deploys everything.',tags:['Docker','FastAPI','SQLite','Python'],tcls:'ta'},
+    {ico:'📊',title:'CRM Data Automation',desc:'Google Sheets automation + Make.com scenario for client data management: dedup, clean, export to JSON/CSV automatically.',tags:['Google Sheets','Make.com','Data'],tcls:'tg'},
+    {ico:'🤖',title:'AI Content Pipeline',desc:'Automated content generation: webhook trigger → OpenAI → Google Sheets log → Email delivery. Runs unattended.',tags:['OpenAI','Make.com','Email'],tcls:'tp'},
+  ],
 },
 es:{
   status:'Disponible',
@@ -706,6 +957,17 @@ contactThankYou:'✓ Contacto guardado.',
   reviewSharePrompt:'¡Nos diste 5 estrellas! Ayuda a otros a encontrarnos:',
   reviewCopyLink:'📋 Copiar Enlace',reviewShareLI:'Compartir en LinkedIn',reviewCopied:'✓ ¡Copiado!',
   noReviews:'Aún no hay reseñas — ¡sé el primero!',
+  lProjects:'Proyectos',sProjects:'Casos de Estudio',tProjects:'🗂️ Proyectos & Casos de Estudio',
+  dkProjects:'Proyectos',
+  projectsDesc:'Sistemas de automatización reales y flujos de IA construidos para clientes y proyectos personales. Cada uno resolvió un problema específico de negocio.',
+  projects:[
+    {ico:'⚡',title:'Pipeline de Leads NextKey',desc:'Automatización Make.com completa: formulario → webhook → Google Sheets + Email + WhatsApp en menos de 600ms. Para NextKeySolutions LLC.',tags:['Make.com','Webhook','Google Sheets','Email'],tcls:'tg'},
+    {ico:'🧠',title:'Ortega Automations OS',desc:'Sistema de agentes IA autónomos: orquestador FastAPI + crew multi-agente CrewAI + SQLite WAL + voice bridge Windows. Dockerizado.',tags:['Python','FastAPI','CrewAI','Docker'],tcls:'tp'},
+    {ico:'🌐',title:'Portfolio OS Bilingüe',desc:'Este sitio web — interfaz estilo OS con integraciones reales Make.com, soporte bilingüe EN/ES, chat IA y sincronización de datos por webhook.',tags:['HTML/CSS/JS','Make.com','GitHub Pages'],tcls:'tc'},
+    {ico:'🐳',title:'Stack Docker Completo',desc:'Stack completamente contenedorizado: FastAPI + SQLite WAL + daemon voice bridge. Un docker compose up despliega todo.',tags:['Docker','FastAPI','SQLite','Python'],tcls:'ta'},
+    {ico:'📊',title:'Automatización CRM',desc:'Automatización de Google Sheets + escenario Make.com para gestión de datos de clientes: deduplicación, limpieza, exportación a JSON/CSV.',tags:['Google Sheets','Make.com','Datos'],tcls:'tg'},
+    {ico:'🤖',title:'Pipeline de Contenido IA',desc:'Generación automatizada de contenido: trigger webhook → OpenAI → registro Sheets → entrega por Email. Funciona desatendido.',tags:['OpenAI','Make.com','Email'],tcls:'tp'},
+  ],
 },
 };
 
@@ -828,15 +1090,15 @@ function saveReviews(){try{localStorage.setItem('oa-reviews',JSON.stringify(revi
 loadReviews();
 
 /* ══ MODAL ENGINE ══ */
-const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','contact','support','reviews'];
+const ALL_WINS=['profile','make','docker','agents','dev','writing','office','quote','contact','support','reviews','projects'];
 function openWin(id){
   currentWin=id;
   const builders={profile:buildProfile,make:buildMake,docker:buildDocker,agents:buildAgents,
     dev:buildDev,writing:buildWriting,office:buildOffice,quote:buildQuote,contact:buildContact,
-    support:buildSupport,reviews:buildReviews};
+    support:buildSupport,reviews:buildReviews,projects:buildProjects};
   const titles={profile:t('tProfile'),make:t('tMake'),docker:t('tDocker'),agents:t('tAgents'),
     dev:t('tDev'),writing:t('tWriting'),office:t('tOffice'),quote:t('tQuote'),contact:t('tContact'),
-    support:t('tSupport'),reviews:t('tReviews')};
+    support:t('tSupport'),reviews:t('tReviews'),projects:t('tProjects')};
   document.getElementById('modal-title').textContent=titles[id]||'—';
   document.getElementById('modal-body').innerHTML=builders[id]?builders[id]():'';
   const ov=document.getElementById('modal-overlay'),win=document.getElementById('modal-win');
@@ -1178,7 +1440,7 @@ ${secs.map(s=>`
   <div style="font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--ok);margin-bottom:8px;">📦 Project Documentation</div>
   <div style="display:flex;flex-wrap:wrap;gap:8px;">
     <a href="https://github.com/Hectorortega642" target="_blank" rel="noopener" class="btn btn-ok btn-sm">⌨ GitHub Repos ↗</a>
-    <a href="https://www.linkedin.com/in/ortegaautomations" target="_blank" rel="noopener" class="btn btn-k btn-sm">in LinkedIn ↗</a>
+    <a href="https://www.linkedin.com/in/hector-ezequiel-benitez-ortega-229414296" target="_blank" rel="noopener" class="btn btn-k btn-sm">in LinkedIn ↗</a>
   </div>
 </div>`;
 }
@@ -1456,4 +1718,199 @@ function submitReview(){
   selectedStars=0;
   setTimeout(()=>{const mb=document.getElementById('modal-body');if(mb)mb.innerHTML=buildReviews();},1400);
 }
+
+/* ══ WINDOW 11 — PROJECTS ══ */
+function buildProjects(){
+  const projs=t('projects')||[];
+  const tcls={tg:'tg',ta:'ta',tp:'tp',tc:'tc'};
+  return `
+<p style="color:var(--t2);font-size:13px;line-height:1.75;margin-bottom:16px;">${t('projectsDesc')}</p>
+<div class="proj-grid">
+  ${projs.map(p=>`
+  <div class="proj-card">
+    <div class="proj-card-ico">${p.ico}</div>
+    <div class="proj-card-title">${esc(p.title)}</div>
+    <div class="proj-card-desc">${esc(p.desc)}</div>
+    <div class="proj-card-tags">${(p.tags||[]).map(tg=>`<span class="proj-card-tag ${p.tcls||''}">${esc(tg)}</span>`).join('')}</div>
+  </div>`).join('')}
+</div>
+<div style="background:rgba(0,200,150,.04);border:1px solid rgba(0,200,150,.14);border-radius:10px;padding:12px 14px;font-family:'JetBrains Mono',monospace;font-size:11px;color:var(--t2);">
+  💡 ${LANG==='es'?'Para ver casos de estudio detallados, solicita una cotización o envía un mensaje.':'For detailed case studies, request a quote or send a message.'}
+  <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+    <button class="btn btn-g btn-sm" onclick="closeWin();setTimeout(()=>openWin('quote'),320);">${t('ctaQuote')}</button>
+    <a href="https://github.com/Hectorortega642" target="_blank" rel="noopener" class="btn btn-k btn-sm">⌨ GitHub ↗</a>
+  </div>
+</div>`;
+}
+
+/* ══ FLOATING AI ASSISTANT ══ */
+let aiPanelOpen=false,aiRunning=false;
+
+const AI_KNOWLEDGE={
+  services:()=>LANG==='es'?
+    'Ofrezco: ⚡ Automatización con Make.com · 🧠 Agentes IA (Python/CrewAI) · 🐳 Docker · 🌐 Aplicaciones web · ✍️ Redacción EN/ES · 📊 Gestión de datos. ¿Sobre cuál quieres saber más?':
+    'I offer: ⚡ Make.com Automation · 🧠 AI Agents (Python/CrewAI) · 🐳 Docker · 🌐 Web Apps · ✍️ EN/ES Writing · 📊 Data Management. Which one interests you?',
+  quote:()=>LANG==='es'?
+    'Para una cotización, abre la ventana 💼 Cotizar desde el menú inferior. También puedes enviarme WhatsApp directo al +1 725 206 8340 o usar el formulario de contacto.':
+    'For a quote, open the 💼 Quote window from the dock. You can also WhatsApp me directly at +1 725 206 8340 or use the contact form.',
+  contact:()=>LANG==='es'?
+    'Puedes contactarme por: 📨 Formulario (abre "Contactar") · 💬 WhatsApp +1 725 206 8340 · in LinkedIn · ⌨ GitHub. Respondo normalmente en menos de 24 horas.':
+    'You can reach me via: 📨 Contact form (open "Contact") · 💬 WhatsApp +1 725 206 8340 · in LinkedIn · ⌨ GitHub. I typically respond within 24 hours.',
+  projects:()=>LANG==='es'?
+    'Mis proyectos incluyen pipelines Make.com para clientes, el sistema de agentes IA (FastAPI + CrewAI + Docker), este portfolio OS y automatizaciones de contenido con OpenAI. Abre 🗂️ Proyectos para ver más.':
+    'My projects include Make.com client pipelines, the AI agent system (FastAPI + CrewAI + Docker), this portfolio OS, and OpenAI content automations. Open 🗂️ Projects to see them all.',
+};
+
+function toggleAiPanel(){
+  aiPanelOpen=!aiPanelOpen;
+  const panel=document.getElementById('ai-panel');
+  const fab=document.getElementById('ai-fab');
+  if(panel)panel.classList.toggle('open',aiPanelOpen);
+  if(fab)fab.setAttribute('aria-expanded',aiPanelOpen?'true':'false');
+  if(aiPanelOpen){
+    const box=document.getElementById('ai-chat-box');
+    if(box&&box.children.length===0){
+      const greeting=LANG==='es'?
+        '¡Hola! Soy el asistente de Ortega Automations. Puedo contarte sobre servicios, proyectos, cotizaciones o cómo contactar a Héctor. ¿En qué te ayudo?':
+        "Hi! I'm the Ortega Automations assistant. I can tell you about services, projects, quotes, or how to reach Hector. How can I help?";
+      pushAiBubble('agent',greeting);
+    }
+    setTimeout(()=>{const inp=document.getElementById('ai-input');if(inp)inp.focus();},180);
+  }
+}
+
+function aiQuick(key){
+  const qs=document.getElementById('ai-quick-btns');
+  if(qs)qs.style.display='none';
+  pushAiBubble('user',{services:LANG==='es'?'¿Qué servicios ofreces?':'What services do you offer?',quote:LANG==='es'?'¿Cómo obtengo una cotización?':'How do I get a quote?',contact:LANG==='es'?'¿Cómo contacto a Héctor?':'How do I contact Hector?',projects:LANG==='es'?'Muéstrame los proyectos':'Show me the projects'}[key]||key);
+  setTimeout(()=>{
+    const reply=AI_KNOWLEDGE[key]?AI_KNOWLEDGE[key]():(LANG==='es'?'Prueba abrir las secciones del menú principal para explorar.':'Try opening sections from the main menu to explore.');
+    pushAiBubble('agent',reply);
+  },700);
+}
+
+function aiKey(e){
+  const ta=e.target;ta.style.height='auto';ta.style.height=Math.min(ta.scrollHeight,80)+'px';
+  if(e.key==='Enter'&&!e.shiftKey){e.preventDefault();sendAiMsg();}
+}
+
+async function sendAiMsg(){
+  if(aiRunning)return;
+  const inp=document.getElementById('ai-input');
+  const msg=inp?inp.value.trim():'';if(!msg)return;
+  pushAiBubble('user',msg);
+  if(inp){inp.value='';inp.style.height='auto';}
+  aiRunning=true;
+  const qs=document.getElementById('ai-quick-btns');if(qs)qs.style.display='none';
+  const box=document.getElementById('ai-chat-box');
+  const dots=document.createElement('div');dots.id='ai-typing';dots.className='typing-dots';dots.innerHTML='<span></span><span></span><span></span>';
+  if(box){box.appendChild(dots);box.scrollTop=box.scrollHeight;}
+
+  if(WEBHOOK_IA_URL&&WEBHOOK_IA_URL.trim()!==''){
+    try{
+      const res=await fetch(WEBHOOK_IA_URL,{method:'POST',headers:{'Content-Type':'application/json'},
+        body:JSON.stringify({action:'chat',message:msg,agent:'general',lang:LANG,source:'ai-assistant',timestamp:new Date().toISOString()}),
+        signal:makeTimeoutSignal(12000)});
+      const td=document.getElementById('ai-typing');if(td)td.remove();
+      if(!res.ok)throw new Error('HTTP '+res.status);
+      let data;try{data=JSON.parse(await res.text());}catch{data={response:await res.text()};}
+      const reply=data.response||data.message||data.text||data.reply||JSON.stringify(data);
+      pushAiBubble('agent',reply);
+    }catch(err){
+      const td=document.getElementById('ai-typing');if(td)td.remove();
+      pushAiBubble('agent',aiLocalFallback(msg));
+    }
+  }else{
+    setTimeout(()=>{const td=document.getElementById('ai-typing');if(td)td.remove();pushAiBubble('agent',aiLocalFallback(msg));},900);
+  }
+  aiRunning=false;
+}
+
+function aiLocalFallback(msg){
+  const m=msg.toLowerCase();
+  if(m.includes('service')||m.includes('servicio'))return AI_KNOWLEDGE.services();
+  if(m.includes('quote')||m.includes('cotiz')||m.includes('precio')||m.includes('price'))return AI_KNOWLEDGE.quote();
+  if(m.includes('contact')||m.includes('reach')||m.includes('email')||m.includes('whatsapp'))return AI_KNOWLEDGE.contact();
+  if(m.includes('project')||m.includes('proyecto')||m.includes('portfolio')||m.includes('work'))return AI_KNOWLEDGE.projects();
+  if(m.includes('make')||m.includes('automation')||m.includes('automatiz'))return LANG==='es'?'Make.com es mi herramienta principal para automatización de procesos. Construyo escenarios con webhooks, routers, Google Sheets, Email y más. ¿Quieres ver un demo? Abre ⚡ Make.com.':'Make.com is my primary automation tool. I build scenarios with webhooks, routers, Google Sheets, email and more. Want to see a demo? Open ⚡ Make.com.';
+  if(m.includes('docker')||m.includes('container'))return LANG==='es'?'Trabajo con Docker para desplegar stacks completos: FastAPI + SQLite + servicios adicionales. Todo en docker compose up. Abre 🐳 Docker para ver el monitor.':'I work with Docker to deploy full stacks: FastAPI + SQLite + additional services. All in one docker compose up. Open 🐳 Docker to see the live monitor.';
+  if(m.includes('agent')||m.includes('agente')||m.includes('ai')||m.includes('ia')||m.includes('openai'))return LANG==='es'?'Construyo sistemas multi-agente con CrewAI + FastAPI + OpenAI. El equipo incluye: Planificador, Investigador, Analista, Escritor, Programador y Evaluador. Abre 🧠 Agentes IA para chatear en vivo.':'I build multi-agent systems with CrewAI + FastAPI + OpenAI. The crew includes: Planner, Researcher, Analyst, Writer, Coder and Scorer. Open 🧠 AI Agents to chat live.';
+  return LANG==='es'?
+    'Puedo ayudarte con información sobre servicios, proyectos, cotizaciones o contacto. También puedes explorar las secciones del menú principal. ¿Qué necesitas?':
+    "I can help with services, projects, quotes or contact info. You can also explore the main menu sections. What do you need?";
+}
+
+function pushAiBubble(type,text){
+  const box=document.getElementById('ai-chat-box');if(!box)return;
+  const w=document.createElement('div');
+  if(type==='user'){
+    w.style.cssText='display:flex;justify-content:flex-end;';
+    const b=document.createElement('div');b.className='bubble bu';b.style.fontSize='12px';b.textContent=text;w.appendChild(b);
+  }else{
+    w.style.cssText='display:flex;flex-direction:column;align-items:flex-start;gap:2px;';
+    const tag=document.createElement('div');tag.className='atag';tag.style.fontSize='9px';tag.textContent='🤖 AI Assistant';
+    const b=document.createElement('div');b.className='bubble ba-chat';b.style.cssText='font-size:12px;line-height:1.6;';b.textContent=text;
+    w.appendChild(tag);w.appendChild(b);
+  }
+  box.appendChild(w);box.scrollTop=box.scrollHeight;
+}
+
+/* ══ VOICE INPUT ══ */
+let voiceRecognition=null,voiceActive=false;
+
+function initVoice(){
+  const SpeechRecognition=window.SpeechRecognition||window.webkitSpeechRecognition;
+  const btn=document.getElementById('voice-btn');
+  if(!SpeechRecognition){if(btn)btn.classList.add('no-support');return;}
+  voiceRecognition=new SpeechRecognition();
+  voiceRecognition.continuous=false;
+  voiceRecognition.interimResults=true;
+  voiceRecognition.lang=LANG==='es'?'es-US':'en-US';
+  voiceRecognition.onstart=()=>{voiceActive=true;if(btn){btn.classList.add('listening');btn.setAttribute('aria-pressed','true');}};
+  voiceRecognition.onend=()=>{voiceActive=false;if(btn){btn.classList.remove('listening');btn.setAttribute('aria-pressed','false');}};
+  voiceRecognition.onerror=()=>{voiceActive=false;if(btn){btn.classList.remove('listening');btn.setAttribute('aria-pressed','false');}};
+  voiceRecognition.onresult=(e)=>{
+    let transcript='';
+    for(let i=e.resultIndex;i<e.results.length;i++)transcript+=e.results[i][0].transcript;
+    const aiInp=document.getElementById('ai-input');
+    const agentInp=document.getElementById('agent-input');
+    const target=aiPanelOpen&&aiInp?aiInp:agentInp||aiInp;
+    if(target){target.value=transcript;target.style.height='auto';target.style.height=Math.min(target.scrollHeight,90)+'px';}
+    if(e.results[e.resultIndex]&&e.results[e.resultIndex].isFinal){
+      if(aiPanelOpen&&aiInp&&transcript.trim())setTimeout(()=>sendAiMsg(),300);
+      else if(agentInp&&transcript.trim())setTimeout(()=>sendAgentMsg(),300);
+    }
+  };
+}
+
+function toggleVoice(){
+  if(!voiceRecognition){
+    const btn=document.getElementById('voice-btn');
+    const msg=LANG==='es'?'Voz no soportada en este navegador. Usa Chrome o Edge.':'Voice not supported in this browser. Use Chrome or Edge.';
+    if(btn){btn.title=msg;}
+    return;
+  }
+  if(voiceActive){voiceRecognition.stop();}
+  else{voiceRecognition.lang=LANG==='es'?'es-US':'en-US';voiceRecognition.start();}
+}
+
+/* ══ CLOSE AI PANEL ON OUTSIDE CLICK ══ */
+document.addEventListener('click',function(e){
+  if(aiPanelOpen&&!document.getElementById('ai-panel')?.contains(e.target)&&!document.getElementById('ai-fab')?.contains(e.target)){
+    toggleAiPanel();
+  }
+});
+
+/* ══ INIT VOICE ON LOAD ══ */
+document.addEventListener('DOMContentLoaded',function(){
+  initVoice();
+  // Add keyboard nav to dock buttons
+  document.querySelectorAll('.dbtn').forEach(btn=>{
+    if(!btn.getAttribute('tabindex'))btn.setAttribute('tabindex','0');
+    btn.addEventListener('keydown',function(e){
+      if(e.key==='Enter'||e.key===' '){e.preventDefault();this.click();}
+    });
+  });
+});
+
 </script></body></html>
