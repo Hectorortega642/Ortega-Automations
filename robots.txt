@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://hectorortega642.github.io/sitemap.xml
+
+# Ortega Automations — AI Automation Engineer
+# Las Vegas, NV · hectorortega642.github.io
